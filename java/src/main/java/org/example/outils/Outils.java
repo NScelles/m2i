@@ -59,4 +59,9 @@ public class Outils {
         return reel;
     }
 
+    public static String capitalize(String inputString) {
+        String firstLetter = inputString.substring(0,0);
+        return inputString.replaceFirst(firstLetter, firstLetter.toUpperCase());
+    }
+
 }
