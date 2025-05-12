@@ -9,6 +9,12 @@ public class Outils {
             System.out.println(getRandomEntier(0,100));
     }
 
+    public static String getString(String demande){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(demande);
+        return scanner.nextLine();
+    }
+
     public static int getRandomEntier(int min, int max){
         int resultat = (int) (Math.random() * max);
         while (resultat<min || resultat>max)
