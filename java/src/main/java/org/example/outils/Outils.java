@@ -16,9 +16,13 @@ public class Outils {
     }
 
     public static int getRandomEntier(int min, int max){
-        int resultat = (int) (Math.random() * max);
-        while (resultat<min || resultat>max)
-            resultat = (int) (Math.random() * max);
+        int multiplicateur = Math.max(Math.abs(max), Math.abs(min));
+        int resultat;
+         do{
+            resultat = (int) (Math.random() * multiplicateur);
+            if(min<0 && (int) (Math.random()*10)>5)
+                resultat *= -1;
+        }while (!(resultat>=min && resultat<=max));
         return resultat;
     }
 
