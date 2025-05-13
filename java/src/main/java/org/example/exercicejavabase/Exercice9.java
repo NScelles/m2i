@@ -2,9 +2,8 @@ package org.example.exercicejavabase;
 
 import static org.example.outils.Outils.getEntier;
 
-public class exercice4 {
+public class Exercice9 {
     public static void main(String[] args) {
-        int age = getEntier(" Saisir un age :");
-        System.out.println(age>=18);
+        System.out.println("Le nombre saisi est " + ((getEntier("Saisir un nombre :")%2==0) ? "pair" : " impair"));
     }
 }

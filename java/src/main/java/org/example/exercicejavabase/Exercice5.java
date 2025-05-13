@@ -2,7 +2,7 @@ package org.example.exercicejavabase;
 
 import static org.example.outils.Outils.getReel;
 
-public class exercice5 {
+public class Exercice5 {
     public static void main(String[] args) {
         double r = getReel("Saisir un rayon :"),
                 h = getReel("Saisir une hauteur :");

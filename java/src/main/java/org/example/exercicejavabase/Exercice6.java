@@ -1,11 +1,8 @@
 package org.example.exercicejavabase;
 
-import java.util.Locale;
-
-import static org.example.outils.Outils.capitalize;
 import static org.example.outils.Outils.getString;
 
-public class exercice6 {
+public class Exercice6 {
     public static void main(String[] args) {
         String myString = getString("Saisir une chaine de caractère: ");
         // Q.1

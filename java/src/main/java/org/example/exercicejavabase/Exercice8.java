@@ -2,7 +2,7 @@ package org.example.exercicejavabase;
 
 import static org.example.outils.Outils.getEntier;
 
-public class exercice8 {
+public class Exercice8 {
     public static void main(String[] args) {
         int age = getEntier(" Saisir un age :");
         if(age>=18)

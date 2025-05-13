@@ -2,7 +2,7 @@ package org.example.exercicejavabase;
 
 import static org.example.outils.Outils.getEntier;
 
-public class exercice2 {
+public class Exercice2 {
     public static void main(String[] args) {
         int a = getEntier("Saisir a :"),
                 b = getEntier("Saisir b :"),

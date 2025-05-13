@@ -59,8 +59,25 @@ public class Outils {
         return reel;
     }
 
+    public static char getChar(String demande) {
+        char caractere=' ';
+        boolean caractereValide = false;
+        do {
+            try {
+                System.out.println(demande);
+                caractere = new Scanner(System.in).nextLine().charAt(0);
+                caractereValide=true;
+            } catch (Exception e){
+                System.out.println("La valeur rentrée n'est pas valide");
+            };
+        }while (!caractereValide);
+        return caractere;
+    }
+
+
+
     public static String capitalize(String inputString) {
-        String firstLetter = inputString.substring(0,0);
+        String firstLetter = inputString.substring(0,1);
         return inputString.replaceFirst(firstLetter, firstLetter.toUpperCase());
     }
 
