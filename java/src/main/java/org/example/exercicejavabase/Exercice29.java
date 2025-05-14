@@ -5,6 +5,7 @@ import java.util.Arrays;
 import static org.example.outils.Outils.getRandomEntier;
 
 public class Exercice29 {
+    /// Fait après la fin du temps réglementaire
     public static void main(String[] args) {
         final int N = 10;
         int compt = 0;

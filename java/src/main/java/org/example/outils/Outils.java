@@ -2,7 +2,7 @@ package org.example.outils;
 
 import java.util.Scanner;
 
-public class Outils {
+public abstract class Outils {
 
     public static void main(String[] args) {
         for (int i = 0;i<100;i++)
@@ -77,8 +77,6 @@ public class Outils {
         }while (!caractereValide);
         return caractere;
     }
-
-
 
     public static String capitalize(String inputString) {
         String firstLetter = inputString.substring(0,1);

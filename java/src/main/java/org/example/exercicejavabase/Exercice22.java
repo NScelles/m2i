@@ -7,10 +7,10 @@ public class Exercice22 {
         int nbr = getEntier("Saisir un nombre :"),
                 compt;
         String reponse;
-        for (int i=1;i<=nbr;i++){
+        for (int i=1;i<=Math.round(nbr/2);i++){
             compt = 0;
             reponse ="";
-            for(int j=i;j<nbr;j++){
+            for(int j=i;j<=Math.round(nbr/2)+1;j++){
                 compt+=j;
                 if(compt==nbr)
                     System.out.println(nbr + " = " + reponse + j);
