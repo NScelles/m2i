@@ -5,6 +5,18 @@ public class Joueur {
     private int exp;
     private int niv;
 
+    public Joueur() {
+        this.nom = "Name";
+        this.exp = 0;
+        this.niv = 1;
+    }
+
+    public Joueur(String nom) {
+        this.nom = nom;
+        this.exp = 0;
+        this.niv = 1;
+    }
+
     public int getNiv() {
         return niv;
     }
@@ -27,20 +39,6 @@ public class Joueur {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-
-
-    public Joueur() {
-        this.nom = "Name";
-        this.exp = 0;
-        this.niv = 1;
-    }
-
-    public Joueur(String nom) {
-        this.nom = nom;
-        this.exp = 0;
-        this.niv = 1;
     }
 
     public void effectuerUneQuete(int numero) {
@@ -68,5 +66,12 @@ public class Joueur {
         return this.exp >= 100;
     }
 
-
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "nom='" + nom + '\'' +
+                ", exp=" + exp +
+                ", niv=" + niv +
+                '}';
+    }
 }

@@ -6,14 +6,18 @@ public class Film {
     private int anneeSortie;
     private String genre;
 
-    @Override
-    public String toString() {
-        return "Film{" +
-                "titre='" + titre + '\'' +
-                ", realisateur='" + realisateur + '\'' +
-                ", anneeSortie=" + anneeSortie +
-                ", genre='" + genre + '\'' +
-                '}';
+    public Film() {
+        this.titre = "La Passion du Christ";
+        this.realisateur = "Mel Gibson";
+        this.anneeSortie = 2004;
+        this.genre = "Drame";
+    }
+
+    public Film(String titre, String realisateur, int anneeSortie, String genre) {
+        this.titre = titre;
+        this.realisateur = realisateur;
+        this.anneeSortie = anneeSortie;
+        this.genre = genre;
     }
 
     public String getTitre() {
@@ -48,17 +52,13 @@ public class Film {
         this.genre = genre;
     }
 
-    public Film() {
-        this.titre = "La Passion du Christ";
-        this.realisateur = "Mel Gibson";
-        this.anneeSortie = 2004;
-        this.genre = "Drame";
-    }
-
-    public Film(String titre, String realisateur, int anneeSortie, String genre) {
-        this.titre = titre;
-        this.realisateur = realisateur;
-        this.anneeSortie = anneeSortie;
-        this.genre = genre;
+    @Override
+    public String toString() {
+        return "Film{" +
+                "titre='" + titre + '\'' +
+                ", realisateur='" + realisateur + '\'' +
+                ", anneeSortie=" + anneeSortie +
+                ", genre='" + genre + '\'' +
+                '}';
     }
 }
