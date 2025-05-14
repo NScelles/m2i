@@ -1,4 +1,4 @@
-package org.example.javapoo;
+package org.example.javapoo.exercicechaise;
 
 
 import org.example.outils.Outils;

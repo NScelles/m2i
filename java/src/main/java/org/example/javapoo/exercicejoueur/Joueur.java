@@ -1,8 +1,9 @@
-package org.example.javapoo;
+package org.example.javapoo.exercicejoueur;
 
 public class Joueur {
     private String nom;
     private int exp;
+    private int niv;
 
     public int getNiv() {
         return niv;
@@ -28,7 +29,7 @@ public class Joueur {
         this.nom = nom;
     }
 
-    private int niv;
+
 
     public Joueur() {
         this.nom = "Name";

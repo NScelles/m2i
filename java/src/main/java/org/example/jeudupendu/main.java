@@ -1,9 +1,5 @@
 package org.example.jeudupendu;
 
-import javax.xml.stream.events.Characters;
-
-import java.util.Arrays;
-
 import static org.example.outils.Outils.getString;
 
 public class main {
@@ -14,7 +10,7 @@ public class main {
 
         do{
             afficheStatusJeu(reponse,vie,lettresDonnes);
-            lettreDonne=demandeLettreUtilisateur();
+            lettreDonne= demandeLettre();
             if (!lettresDonnes.contains(lettreDonne))
                 lettresDonnes += lettreDonne + " ";
             if(leMot.contains(lettreDonne))
@@ -29,13 +25,6 @@ public class main {
         }while (!leMot.equals(reponse));
 
         System.out.println("Bravo vous trouvé le mot " + leMot);
-    }
-
-    public static void afficheStatusJeu(String reponse,int vie, String lettresDonnees) {
-        System.out.println("Le mot : " + reponse);
-        System.out.println("Il vous reste " + vie + " vie(s)");
-        if (!lettresDonnees.trim().isEmpty())
-            System.out.println("Vous avez déjà donné les lettres " + lettresDonnees);
     }
 
     public static String demandeMot(){
@@ -61,7 +50,22 @@ public class main {
                 motCachee += "_";
             else
                 motCachee += leMot.substring(i,i+1);
-            return motCachee;
+        return motCachee;
+    }
+
+    public static void afficheStatusJeu(String reponse,int vie, String lettresDonnees) {
+        System.out.println("Le mot : " + reponse);
+        System.out.println("Il vous reste " + vie + " vie(s)");
+        if (!lettresDonnees.trim().isEmpty())
+            System.out.println("Vous avez déjà donné les lettres " + lettresDonnees);
+    }
+
+    public static String demandeLettre(){
+        String string="";
+        do {
+            string = getString("Donné une lettre").toLowerCase().substring(0,1);
+        }while (!Character.isLetter(string.charAt(0)));
+        return string;
     }
 
     public static String decouvrirLettre(String reponseUtilisateur, String leMot,String lettreDonne) {
@@ -76,11 +80,5 @@ public class main {
         return resultatLettreDonne;
     }
 
-    public static String demandeLettreUtilisateur(){
-        String string="";
-        do {
-            string = getString("Donné une lettre").toLowerCase().substring(0,1);
-        }while (!Character.isLetter(string.charAt(0)));
-        return string;
-    }
+
 }

@@ -1,10 +1,10 @@
-package org.example.javapoo;
+package org.example.javapoo.exercicefilm;
 
 public class Film {
-    String titre;
-    String realisateur;
-    int anneeSortie;
-    String genre;
+    private String titre;
+    private String realisateur;
+    private int anneeSortie;
+    private String genre;
 
     @Override
     public String toString() {

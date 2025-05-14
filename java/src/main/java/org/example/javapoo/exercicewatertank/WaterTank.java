@@ -1,35 +1,31 @@
-package org.example.javapoo;
+package org.example.javapoo.exercicewatertank;
 
 public class WaterTank {
-    double poidVide;
-    double capaciteMax;
-    double niveauRemplissage;
-    double totalStoque;
+    private double poidVide;
+    private double capaciteMax;
+    private double niveauRemplissage;
+    private static double totalStoque = 0;
 
     public WaterTank(double poidVide, double capaciteMax, double niveauRemplissage) {
         this.poidVide = poidVide;
         this.capaciteMax = capaciteMax;
         this.niveauRemplissage = niveauRemplissage;
-        this.totalStoque=niveauRemplissage;
+        this.totalStoque+=niveauRemplissage;
     }
 
     public void remplir(double quantite){
-        double res = niveauRemplissage;
-        this.niveauRemplissage+=quantite;
         if (quantite+this.niveauRemplissage>this.capaciteMax)
-            this.niveauRemplissage= capaciteMax;
-        this.totalStoque += this.niveauRemplissage-res;
-
+            quantite=this.capaciteMax-this.niveauRemplissage;
+        this.niveauRemplissage+=quantite;
+        this.totalStoque += quantite;
     }
 
     public void vider(double quantite){
-        this.niveauRemplissage+=quantite;
         if (quantite+this.niveauRemplissage<0)
-            this.niveauRemplissage=0;
+            quantite=this.niveauRemplissage;
+        this.niveauRemplissage-=quantite;
+        this.totalStoque -= quantite;
     }
-
-
-
 
     public double getNiveauRemplissage() {
         return niveauRemplissage;
@@ -53,6 +49,18 @@ public class WaterTank {
 
     public void setCapaciteMax(double capaciteMax) {
         this.capaciteMax = capaciteMax;
+    }
+
+    public static double getTotalStoque() {
+        return totalStoque;
+    }
+
+    public static void setTotalStoque(double totalStoque) {
+        WaterTank.totalStoque = totalStoque;
+    }
+
+    public double getPoidCiterne(){
+        return this.poidVide + this.niveauRemplissage;
     }
 
 }
