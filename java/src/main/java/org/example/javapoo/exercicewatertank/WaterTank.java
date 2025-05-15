@@ -14,15 +14,19 @@ public class WaterTank {
     }
 
     public void remplir(double quantite){
-        if (quantite+this.niveauRemplissage>this.capaciteMax)
-            quantite=this.capaciteMax-this.niveauRemplissage;
+        if (quantite+this.niveauRemplissage>this.capaciteMax && quantite>=0) {
+            System.out.println("Vous avez un exedant de " + (this.capaciteMax - (quantite + this.niveauRemplissage)) + "L");
+            quantite = this.capaciteMax - this.niveauRemplissage;
+        }
         this.niveauRemplissage+=quantite;
         this.totalStoque += quantite;
     }
 
     public void vider(double quantite){
-        if (quantite+this.niveauRemplissage<0)
-            quantite=this.niveauRemplissage;
+        if (quantite<this.niveauRemplissage && quantite>=0) {
+            System.out.println("Vous avez seulement " + this.niveauRemplissage + "L");
+            quantite = this.niveauRemplissage;
+        }
         this.niveauRemplissage-=quantite;
         this.totalStoque -= quantite;
     }

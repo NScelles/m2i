@@ -1,18 +1,21 @@
-package org.example.javapoo.exercicechaise;
+package org.example.javapoo.bonuspoo.bonuschaise;
 
-
+import org.example.javapoo.exercicechaise.Materiaux;
 import org.example.outils.Outils;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.example.outils.Outils.getRandomDouble;
 
 public class Chaise {
-
     private int nbrPied;
     private Materiaux materiaux ;
     private Color couleur;
     private double prix;
+
+    private static List<Chaise> totalChaise = new ArrayList<>();
 
     public Chaise() {
         this(Outils.getRandomEntier(1,5),Materiaux.PLASTIQUE,new Color(0x000000),getRandomDouble(1,100));
@@ -23,6 +26,7 @@ public class Chaise {
         this.materiaux = materiaux;
         this.couleur = color;
         this.prix = prix;
+        totalChaise.add(this);
     }
 
     public void CasserPied(int nbrPied){
@@ -69,4 +73,6 @@ public class Chaise {
                 " à un prix de " + Math.floor(prix*100)/100+
                 "\n";
     }
+
+
 }

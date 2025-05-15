@@ -14,7 +14,9 @@ public class Arbre extends Plante{
 
     @Override
     public String toString() {
-        String affichage = super.toString() + "\ncirconférence = " + this.circonference;
+        String affichage = super.toString() + "\ncirconférence -= " + this.circonference;
         return affichage;
     }
+
+
 }

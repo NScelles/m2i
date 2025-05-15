@@ -7,10 +7,7 @@ public class Film {
     private String genre;
 
     public Film() {
-        this.titre = "La Passion du Christ";
-        this.realisateur = "Mel Gibson";
-        this.anneeSortie = 2004;
-        this.genre = "Drame";
+        this("La Passion du Christ","Mel Gibson",2004,"Drame");
     }
 
     public Film(String titre, String realisateur, int anneeSortie, String genre) {
