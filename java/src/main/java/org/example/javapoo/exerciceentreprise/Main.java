@@ -1,5 +1,7 @@
 package org.example.javapoo.exerciceentreprise;
 
+import java.util.List;
+
 import static org.example.outils.Outils.getEntier;
 import static org.example.outils.Outils.getString;
 
@@ -13,8 +15,8 @@ public class Main {
 
     public static void demarrer(Annuaire annuaire) {
         int choix;
+        System.out.println("\nBienvenue sur l'annuaire d'entreprise :");
         do {
-            System.out.println("\nBienvenue sur l'annuaire d'entreprise :");
             System.out.println("1) Ajouter une entreprise");
             System.out.println("2) Voir toutes les entreprises (leurs noms)");
             System.out.println("3) Voir les détails d'une entreprise");
@@ -43,11 +45,13 @@ public class Main {
 
     private static void voirDetailsEntreprise(Annuaire annuaire) {
         int idEntreprise = getEntier("Donnez l'ID de l'entreprise");
+        while (idEntreprise>annuaire.getEntreprises().size())
+            idEntreprise = getEntier("Votre saisie est incorect ");
         System.out.println(annuaire.afficheEntrepriseId(idEntreprise));
     }
 
     private static void afficherNomsEntreprises(Annuaire annuaire) {
-        System.out.println();
+        annuaire.afficheToutesEntreprises();
     }
 
     private static void ajouterEntreprise(Annuaire annuaire) {

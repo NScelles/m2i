@@ -30,6 +30,15 @@ public class Annuaire {
             }
     }
 
+    public void afficheToutesEntreprises(){
+        String affichage = "";
+        int compt= 0;
+        for (Entreprise entreprise:this.entreprises){
+            affichage += "ID : " + (compt++) + " | Nom : " + entreprise.getNom() + "\n";
+        }
+        System.out.println(affichage);
+    }
+
     public List<Entreprise> getEntreprises() {
         return entreprises;
     }
@@ -43,7 +52,7 @@ public class Annuaire {
         String affichage = "";
         int compt= 0;
         for (Entreprise entreprise:this.entreprises){
-            affichage += "ID : " + (compt++) + " | Nom : " + entreprise.getNom() + "\n";
+            affichage += "ID : " + (compt++) + " | " + entreprise + "\n";
         }
         return affichage;
     }
