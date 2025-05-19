@@ -20,7 +20,7 @@ public class Lot extends Article {
                 article.getRef() + " | " +
                 "Lot de " + article.getNom() + " | " +
                 getPrix()  + " | " +
-                getPrix() * quantite;
+                getPrix() * quantiteLot;
     }
 
     public double getPrix(){

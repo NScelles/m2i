@@ -64,7 +64,8 @@ public class Facture {
                 "numeroFacture: " + numeroFacture + " | " +
                 "date: " + date + " | " +
                 "articles : " +
-                afficheLignes
+                afficheLignes +
+                "\nPrix TTC : " + getPrixTotal()
                 ;
     }
 }
