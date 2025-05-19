@@ -9,7 +9,7 @@ public class Lot extends Article {
     private double pourcentageRemise;
 
     public Lot(ArticleUnitaire article, int quantite, double pourcentageRemise) {
-        super(compt);
+        super();
         this.article = article;
         this.quantite = quantite;
         this.pourcentageRemise = pourcentageRemise;

@@ -19,7 +19,9 @@ public class Papetrie {
         this.lesFactures = new HashMap<>();
     }
 
-
+    public Article getArticleById(int ref){
+        return Article.getArticleByRef(ref);
+    }
 
     public boolean isExist(Integer ref){
         return this.lesArticles.containsKey(ref);

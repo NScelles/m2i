@@ -1,5 +1,6 @@
 package org.example.javapoo.tppapetrie.facture;
 
+import org.example.javapoo.tppapetrie.Papetrie;
 import org.example.javapoo.tppapetrie.article.Article;
 
 import java.util.*;
@@ -26,9 +27,9 @@ public class Facture {
         this.quantiteLigneAchat = new ArrayList<>();
         //toutesLesFactures.put(numeroFacture,this);
     }
-    //TODO Faire une fonction dans papetrie que renvoi un article a partir de sa ref 
+
     public void ajouterLigne(int ref, int quantite){
-        quantiteLigneAchat.add(new Ligne(article,quantite));
+        quantiteLigneAchat.add(new Ligne(Article.getArticleByRef(ref),quantite));
     }
     public double getPrixTotal(){
         double prixTotal = 0;

@@ -5,8 +5,8 @@ public abstract class ArticleUnitaire extends Article{
     protected String nom;
     protected double prixUnitaire;
 
-    public ArticleUnitaire(int ref, String nom, double prixUnitaire) {
-        super(ref);
+    public ArticleUnitaire(String nom, double prixUnitaire) {
+        super();
         this.nom = nom;
         this.prixUnitaire = prixUnitaire;
     }
