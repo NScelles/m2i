@@ -12,6 +12,8 @@ import java.util.Map;
 public abstract class Article {
     protected int ref;
     protected static int compt = 1;
+    public abstract double getPrix();
+    public abstract String affichageFacture(int quantite);
 
     public Article() {
         this.ref = compt++;

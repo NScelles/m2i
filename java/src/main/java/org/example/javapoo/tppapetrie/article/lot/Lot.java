@@ -15,8 +15,8 @@ public class Lot extends Article {
         this.pourcentageRemise = pourcentageRemise;
     }
 
-    public String affichageFacture(){
-        return quantite + " | " +
+    public String affichageFacture(int quantiteLot){
+        return quantiteLot + " | " +
                 article.getRef() + " | " +
                 "Lot de " + article.getNom() + " | " +
                 getPrix()  + " | " +

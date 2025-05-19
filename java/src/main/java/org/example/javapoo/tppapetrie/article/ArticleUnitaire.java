@@ -11,13 +11,7 @@ public abstract class ArticleUnitaire extends Article{
         this.prixUnitaire = prixUnitaire;
     }
 
-    public String affichageFacture(int quantite){
-        return quantite + " | " +
-                this.ref + " | " +
-                this.nom + " | " +
-                this.prixUnitaire  + " | " +
-                this.prixUnitaire * quantite;
-    }
+
 
     public String getNom() {
         return nom;

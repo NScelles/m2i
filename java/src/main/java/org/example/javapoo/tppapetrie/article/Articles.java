@@ -4,3 +4,5 @@ public enum Articles {
     ARTICLEUNITAIRE,
     LOT
 }
+
+/// Inutile après modification abstract

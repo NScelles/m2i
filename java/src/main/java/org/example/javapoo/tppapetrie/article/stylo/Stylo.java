@@ -21,4 +21,18 @@ public class Stylo extends ArticleUnitaire {
                 ", ref=" + ref +
                 '}';
     }
+
+    @Override
+    public double getPrix() {
+        return prixUnitaire;
+    }
+
+    @Override
+    public String affichageFacture(int quantite){
+        return quantite + " | " +
+                this.ref + " | " +
+                this.nom + " | " +
+                this.prixUnitaire  + " | " +
+                this.prixUnitaire * quantite;
+    }
 }
