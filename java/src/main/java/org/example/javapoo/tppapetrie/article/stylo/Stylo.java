@@ -8,7 +8,7 @@ public class Stylo extends ArticleUnitaire {
     private CouleurStylo couleur;
 
     public Stylo(String nom, double prixUnitaire, CouleurStylo couleur) {
-        super(Article.compt, nom, prixUnitaire);
+        super(nom, prixUnitaire);
         this.couleur = couleur;
     }
 

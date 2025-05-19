@@ -12,16 +12,11 @@ import java.util.Map;
 public abstract class Article {
     protected int ref;
     protected static int compt = 1;
-    private static Map<Integer,Article> lesArticles = new HashMap<>();
 
     public Article() {
         this.ref = compt++;
-        lesArticles.put(this.ref,this);
     }
 
-    public static Article getArticleByRef(int ref){
-        return lesArticles.get(ref);
-    }
 
     public Articles getTypeOfArticle(){
         if (this instanceof ArticleUnitaire)

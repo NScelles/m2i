@@ -8,7 +8,7 @@ public class Ramette extends ArticleUnitaire {
     private int grammage;
 
     public Ramette(String nom, double prixUnitaire, int grammage) {
-        super(Article.compt, nom, prixUnitaire);
+        super(nom, prixUnitaire);
         this.grammage = grammage;
     }
 

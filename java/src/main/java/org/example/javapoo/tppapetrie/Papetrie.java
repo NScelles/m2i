@@ -7,44 +7,57 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Papetrie {
-    private Map<Integer, Article> lesArticles;
-    private Map<Integer, Facture> lesFactures;
+    private static Map<Integer, Article> lesArticles = new HashMap<>();
+    private static Map<Integer, Facture> lesFactures = new HashMap<>();
 
     public Papetrie() {
         this(new HashMap<>());
     }
 
     public Papetrie(Map<Integer, Article> lesArticles) {
-        this.lesArticles = lesArticles;
-        this.lesFactures = new HashMap<>();
+        Papetrie.lesArticles.putAll(lesArticles);
     }
 
-    public Article getArticleById(int ref){
-        return Article.getArticleByRef(ref);
+    public static Article getArticleById(int ref){
+        return lesArticles.get(ref);
     }
 
-    public boolean isExist(Integer ref){
-        return this.lesArticles.containsKey(ref);
+    public static Facture getFactureById(int ref){
+        return lesFactures.get(ref);
+    }
+
+    public static boolean isExist(Integer ref){
+        return lesArticles.containsKey(ref);
+    }
+
+    public void ajouterArticleFacture(int refFacture, int refArticle, int quantite){
+        lesFactures.get(refFacture).ajouterLigne(refArticle,quantite);
+    }
+
+    public void nouvelleFacture(String nomClient){
+        lesFactures.put(Facture.getComtp(),new Facture(nomClient));
+    }
+
+    public void ajouterFacture(String nomClient,int nbLigneMax){
+        lesFactures.put(Facture.getComtp(),new Facture(nomClient,nbLigneMax));
+    }
+
+    public static Facture getLastFactureByNom(String nom){
+        int last=-1;
+        for (Facture facture:lesFactures.values()){
+            if (facture.getClient().equals(nom) && last<=facture.getNumeroFacture())
+                last=facture.getNumeroFacture();
+
+        }
+        return lesFactures.get(last);
     }
 
     public void ajouterArticle(Article article){
         lesArticles.put(article.getRef(),article);
     }
 
-    public Map<Integer, Article> getLesArticles() {
+    public static Map<Integer, Article> getLesArticles() {
         return lesArticles;
-    }
-
-    public void setLesArticles(Map<Integer, Article> lesArticles) {
-        this.lesArticles = lesArticles;
-    }
-
-    public Map<Integer, Facture> getLesFactures() {
-        return lesFactures;
-    }
-
-    public void setLesFactures(Map<Integer, Facture> lesFactures) {
-        this.lesFactures = lesFactures;
     }
 
     @Override
