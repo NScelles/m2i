@@ -1,6 +1,7 @@
 package org.example.javapoo.exerciceentreprise;
 
-public class Entreprise {
+public class
+Entreprise {
     private String nom;
     private String siret;
     private String adresse;
