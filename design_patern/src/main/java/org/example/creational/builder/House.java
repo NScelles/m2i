@@ -1,57 +1,58 @@
 package org.example.creational.builder;
 
-public class Maison {
-    private int nbEtage;
-    private boolean piscine;
-    private String typeToiture;
-    private String couleur;
+public class House {
+
+    private int floor;
+    private boolean pool;
+    private String roofType;
+    private String color;
 
     @Override
     public String toString() {
-        return "Maison{" +
-                "nbEtage=" + nbEtage +
-                ", piscine=" + piscine +
-                ", typeToiture='" + typeToiture + '\'' +
-                ", couleur='" + couleur + '\'' +
+        return "House{" +
+                "floor=" + floor +
+                ", pool=" + pool +
+                ", roofType='" + roofType + '\'' +
+                ", color='" + color + '\'' +
                 '}';
     }
 
-    private Maison(Builder builder) {
-        this.nbEtage = builder.nbEtage;
-        this.piscine = builder.piscine;
-        this.typeToiture = builder.typeToiture;
-        this.couleur = builder.couleur;
+    private House(Builder builder) {
+        this.floor = builder.floor;
+        this.pool = builder.pool;
+        this.roofType = builder.roofType;
+        this.color = builder.color;
     }
 
     public static class Builder {
 
-        public int nbEtage;
-        public boolean piscine;
-        public String typeToiture;
-        public String couleur;
+        public int floor;
+        public boolean pool;
+        public String roofType;
+        public String color;
 
-        public Builder nbEtage(int nbEtage){
-            this.nbEtage = nbEtage;
+        public Builder floor(int floor){
+            this.floor = floor;
             return this;
         }
 
-        public Builder piscine(boolean piscine){
-            this.piscine = piscine;
+        public Builder pool(boolean pool){
+            this.pool = pool;
             return this;
         }
 
-        public Builder typeToiture(String typeToiture){
-            this.typeToiture = typeToiture;
+        public Builder roofType(String roofType){
+            this.roofType = roofType;
             return this;
         }
 
-        public Builder couleur(String couleur){
-            this.couleur = couleur;
+        public Builder color(String color){
+            this.color = color;
             return this;
         }
 
-        public Maison build(){
-            return new Maison(this);
+        public House build(){
+            return new House(this);
         }
     }
 }

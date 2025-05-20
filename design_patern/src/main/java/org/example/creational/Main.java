@@ -1,10 +1,21 @@
 package org.example.creational;
 
-import org.example.creational.builder.Maison;
-import org.example.creational.builder.Person;
+import org.example.creational.builder.House;
 
 public class Main {
     public static void main(String[] args) {
-        Maison maison= new Maison.Builder().nbEtage(10).piscine(true).typeToiture("myconnaispas").couleur("bleu").build();
+        House maison = new House.Builder()
+                .floor(10)
+                .pool(true)
+                .roofType("Tuile")
+                .color("bleu")
+                .build();
+
+        House house = new House.Builder()
+                .roofType("Chaume")
+                .pool(false)
+                .floor(1)
+                .color("rose")
+                .build();
     }
 }
