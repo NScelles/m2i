@@ -1,6 +1,6 @@
-package org.example.structural.decorator;
+package org.example.structural.decorator.pizza;
 
-public class PlainPizza implements Pizza{
+public class PlainPizza implements Pizza {
 
     @Override
     public String getDescription() {

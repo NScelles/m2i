@@ -1,6 +1,6 @@
-package org.example.structural.decorator;
+package org.example.structural.decorator.pizza;
 
-public class HamDecorator extends PizzaDecorator{
+public class HamDecorator extends PizzaDecorator {
 
     public HamDecorator(Pizza pizza) {
         super(pizza);
@@ -16,3 +16,4 @@ public class HamDecorator extends PizzaDecorator{
         return super.getCost() + 2;
     }
 }
+

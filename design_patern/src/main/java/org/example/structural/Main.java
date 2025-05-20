@@ -1,4 +1,40 @@
 package org.example.structural;
 
+import org.example.structural.decorator.pizza.CheeseDecortor;
+import org.example.structural.decorator.pizza.HamDecorator;
+import org.example.structural.decorator.pizza.Pizza;
+import org.example.structural.decorator.pizza.PlainPizza;
+import org.example.structural.decorator.text.LowerCaseDecorator;
+import org.example.structural.decorator.text.PlainText;
+import org.example.structural.decorator.text.Text;
+import org.example.structural.decorator.text.UpperCaseDecorator;
+
 public class Main {
+    public static void main(String[] args) {
+
+        /// Pizza Exemple 
+        Pizza basePizza = new PlainPizza();
+        System.out.println(basePizza.getDescription() +" " + basePizza.getCost());
+
+        Pizza cheesePizza = new CheeseDecortor(basePizza);
+        System.out.println(cheesePizza.getDescription() + " " + cheesePizza.getCost());
+
+        Pizza hamPizza = new HamDecorator(cheesePizza);
+        System.out.println(hamPizza.getDescription()+" "+hamPizza.getCost());
+
+
+        /// Text Exercice
+
+        Text baseText = new PlainText();
+        System.out.println(baseText.transform());
+
+        Text upperText = new UpperCaseDecorator(baseText);
+        System.out.println(upperText.transform());
+
+        Text lowerText = new LowerCaseDecorator(baseText);
+        System.out.println(lowerText.transform());
+
+
+
+    }
 }
