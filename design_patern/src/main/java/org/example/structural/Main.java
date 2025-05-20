@@ -12,7 +12,7 @@ import org.example.structural.decorator.text.UpperCaseDecorator;
 public class Main {
     public static void main(String[] args) {
 
-        /// Pizza Exemple 
+        /// Pizza Exemple
         Pizza basePizza = new PlainPizza();
         System.out.println(basePizza.getDescription() +" " + basePizza.getCost());
 
@@ -25,7 +25,7 @@ public class Main {
 
         /// Text Exercice
 
-        Text baseText = new PlainText();
+        Text baseText = new PlainText("Mon Text");
         System.out.println(baseText.transform());
 
         Text upperText = new UpperCaseDecorator(baseText);
