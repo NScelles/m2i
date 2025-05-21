@@ -12,11 +12,6 @@ public class Elf implements Observer {
 
     @Override
     public void onCreate(Toy toy) {
-        System.out.println(toy.getDescription() + " est construit");
-    }
-
-    @Override
-    public void onDecoration(Toy toy) {
-        System.out.println(toy.getDescription() + " a reçu une amélioration");
+        System.out.println(name + " a reçu la notification :" + toy.getDescription() + " est construit");
     }
 }

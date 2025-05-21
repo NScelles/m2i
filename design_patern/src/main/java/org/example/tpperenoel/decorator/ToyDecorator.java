@@ -12,7 +12,7 @@ public abstract class ToyDecorator implements Toy {
 
     @Override
     public void use() {
-
+        toy.use();
     }
 
     @Override

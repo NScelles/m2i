@@ -1,6 +1,10 @@
 package org.example.tpperenoel.factory;
 
-public interface Toy {
+
+import org.example.tpperenoel.notification.Observer;
+import org.example.tpperenoel.notification.ToyNotifier;
+
+public interface Toy{
 
    void use();
    String getDescription();

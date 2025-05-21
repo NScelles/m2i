@@ -15,6 +15,5 @@ public class LowerCaseDecorator extends TextDecorator{
     public String getText() {
         return super.getText();
     }
-
 }
 
