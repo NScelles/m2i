@@ -10,28 +10,34 @@ public class Main {
     public static void main(String[] args) {
 
         /// Pizza Exemple
-        Pizza basePizza = new PlainPizza();
-        System.out.println(basePizza.getDescription() +" " + basePizza.getCost());
-
-        Pizza cheesePizza = new CheeseDecortor(basePizza);
-        System.out.println(cheesePizza.getDescription() + " " + cheesePizza.getCost());
-
-        Pizza hamPizza = new HamDecorator(cheesePizza);
-        System.out.println(hamPizza.getDescription()+" "+hamPizza.getCost());
+//        Pizza basePizza = new PlainPizza();
+//        System.out.println(basePizza.getDescription() +" " + basePizza.getCost());
+//
+//        Pizza cheesePizza = new CheeseDecortor(basePizza);
+//        System.out.println(cheesePizza.getDescription() + " " + cheesePizza.getCost());
+//
+//        Pizza hamPizza = new HamDecorator(cheesePizza);
+//        System.out.println(hamPizza.getDescription()+" "+hamPizza.getCost());
 
 
         /// Text Exercice
+        String monText = "Mon Text";
 
-        Text baseText = new PlainText("Mon Text");
+        Text baseText = new PlainText(monText);
         System.out.println(baseText.transform());
-
-        Text upperText = new UpperCaseDecorator(baseText);
-        System.out.println(upperText.transform());
 
         Text lowerText = new LowerCaseDecorator(baseText);
         System.out.println(lowerText.transform());
 
-        Text prefixedText = new PrefixDecorator(baseText,">> ");
+        Text prefixedText = new PrefixDecorator(lowerText,">> ");
         System.out.println(prefixedText.transform());
+
+        Text upperText = new UpperCaseDecorator(prefixedText);
+        System.out.println(upperText.transform());
+
+//        baseText.setText("TEST");
+
+        Text changedText = new ChangeTextDecorator(upperText,"New TEXT");
+        System.out.println(changedText.transform());
     }
 }

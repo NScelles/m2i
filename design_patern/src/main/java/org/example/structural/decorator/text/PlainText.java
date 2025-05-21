@@ -12,4 +12,16 @@ public class PlainText implements Text{
     public String transform() {
         return input;
     }
+
+    @Override
+    public String getText() {
+        return input;
+    }
+
+    @Override
+    public void setText(String newText) {
+        this.input = newText;
+    }
+
+
 }

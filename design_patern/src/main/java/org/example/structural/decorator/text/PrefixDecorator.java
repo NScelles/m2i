@@ -13,4 +13,9 @@ public class PrefixDecorator extends TextDecorator{
     public String transform() {
         return this.prefix + super.transform();
     }
+
+    @Override
+    public String getText() {
+        return super.getText();
+    }
 }

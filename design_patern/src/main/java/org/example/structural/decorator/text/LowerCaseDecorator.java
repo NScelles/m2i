@@ -10,5 +10,11 @@ public class LowerCaseDecorator extends TextDecorator{
     public String transform() {
         return super.transform().toLowerCase();
     }
+
+    @Override
+    public String getText() {
+        return super.getText();
+    }
+
 }
 

@@ -10,4 +10,9 @@ public class UpperCaseDecorator extends TextDecorator {
     public String transform() {
         return super.transform().toUpperCase();
     }
+
+    @Override
+    public String getText() {
+        return super.getText();
+    }
 }

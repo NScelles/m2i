@@ -12,4 +12,15 @@ public abstract class TextDecorator implements Text{
     public String transform() {
         return text.transform();
     }
+
+    @Override
+    public String getText() {
+        return text.getText();
+    }
+
+    @Override
+    public void setText(String newText) {
+        text.setText(newText);
+    }
+
 }
