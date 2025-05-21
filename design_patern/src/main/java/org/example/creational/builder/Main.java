@@ -1,6 +1,4 @@
-package org.example.creational;
-
-import org.example.creational.builder.House;
+package org.example.creational.builder;
 
 public class Main {
     public static void main(String[] args) {

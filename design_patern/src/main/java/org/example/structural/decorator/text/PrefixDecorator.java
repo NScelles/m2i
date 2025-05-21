@@ -10,7 +10,7 @@ public class PrefixDecorator extends TextDecorator{
     }
 
     @Override
-    public String transform(String input) {
-        return this.prefix + super.transform(input);
+    public String transform() {
+        return this.prefix + super.transform();
     }
 }

@@ -1,0 +1,9 @@
+package org.example.creational.factory_method.vehicle;
+
+public class CarFactory extends VehicleFactory{
+
+    @Override
+    public Vehicle createVehicle() {
+        return new Car();
+    }
+}

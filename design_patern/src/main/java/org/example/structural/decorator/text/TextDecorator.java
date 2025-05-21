@@ -9,7 +9,7 @@ public abstract class TextDecorator implements Text{
     }
 
     @Override
-    public String transform(String input) {
-        return text.transform(input);
+    public String transform() {
+        return text.transform();
     }
 }

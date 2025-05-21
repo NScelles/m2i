@@ -2,18 +2,17 @@ package org.example.behavioral;
 
 import org.example.behavioral.observer.event.Event;
 import org.example.behavioral.observer.event.EventManager;
+import org.example.behavioral.observer.event.Observer;
 import org.example.behavioral.observer.event.EventObserver;
-import org.example.behavioral.observer.event.MyEventObserver;
 import org.example.behavioral.observer.subject.MyObserver;
-import org.example.behavioral.observer.subject.Observer;
 import org.example.behavioral.observer.subject.Subject;
 
 public class Main {
     public static void main(String[] args) {
         Subject subject = new Subject();
         /// Observers
-        Observer observerOne = new MyObserver("Nelson");
-        Observer observerTwo = new MyObserver("Salim");
+        org.example.behavioral.observer.subject.Observer observerOne = new MyObserver("Nelson");
+        org.example.behavioral.observer.subject.Observer observerTwo = new MyObserver("Salim");
 
 
 
@@ -28,8 +27,8 @@ public class Main {
         Event event = new Event("Avant première de The Chosen");
         EventManager eventManager = new EventManager(event);
 
-        EventObserver eventObserverOne = new MyEventObserver("Nelson","Super");
-        EventObserver eventObserverTwo = new MyEventObserver("Salim","ZZzzzzZ");
+        Observer eventObserverOne = new EventObserver("Nelson","Super");
+        Observer eventObserverTwo = new EventObserver("Salim","ZZzzzzZ");
 
         eventManager.addObserver(eventObserverOne);
         eventManager.addObserver(eventObserverTwo);

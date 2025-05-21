@@ -22,16 +22,16 @@ public class Main {
 
         /// Text Exercice
 
-        Text baseText = new PlainText();
-        System.out.println(baseText.transform("Test 1"));
+        Text baseText = new PlainText("Mon Text");
+        System.out.println(baseText.transform());
 
         Text upperText = new UpperCaseDecorator(baseText);
-        System.out.println(upperText.transform("Test 2"));
+        System.out.println(upperText.transform());
 
         Text lowerText = new LowerCaseDecorator(baseText);
-        System.out.println(lowerText.transform("Test 3"));
+        System.out.println(lowerText.transform());
 
         Text prefixedText = new PrefixDecorator(baseText,">> ");
-        System.out.println(prefixedText.transform("Test 4"));
+        System.out.println(prefixedText.transform());
     }
 }

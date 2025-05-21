@@ -7,8 +7,8 @@ public class LowerCaseDecorator extends TextDecorator{
     }
 
     @Override
-    public String transform(String input) {
-        return super.transform(input).toLowerCase();
+    public String transform() {
+        return super.transform().toLowerCase();
     }
 }
 
