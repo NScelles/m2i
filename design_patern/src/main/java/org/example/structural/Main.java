@@ -4,10 +4,7 @@ import org.example.structural.decorator.pizza.CheeseDecortor;
 import org.example.structural.decorator.pizza.HamDecorator;
 import org.example.structural.decorator.pizza.Pizza;
 import org.example.structural.decorator.pizza.PlainPizza;
-import org.example.structural.decorator.text.LowerCaseDecorator;
-import org.example.structural.decorator.text.PlainText;
-import org.example.structural.decorator.text.Text;
-import org.example.structural.decorator.text.UpperCaseDecorator;
+import org.example.structural.decorator.text.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,16 +22,16 @@ public class Main {
 
         /// Text Exercice
 
-        Text baseText = new PlainText("Mon Text");
-        System.out.println(baseText.transform());
+        Text baseText = new PlainText();
+        System.out.println(baseText.transform("Test 1"));
 
         Text upperText = new UpperCaseDecorator(baseText);
-        System.out.println(upperText.transform());
+        System.out.println(upperText.transform("Test 2"));
 
         Text lowerText = new LowerCaseDecorator(baseText);
-        System.out.println(lowerText.transform());
+        System.out.println(lowerText.transform("Test 3"));
 
-
-
+        Text prefixedText = new PrefixDecorator(baseText,">> ");
+        System.out.println(prefixedText.transform("Test 4"));
     }
 }
