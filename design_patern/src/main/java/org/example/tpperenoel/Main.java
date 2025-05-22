@@ -18,6 +18,6 @@ public class Main {
         toyUn.use();
         ToyDecorator paintedToy = new PaintDecorator(toyUn,"Bleu");
         System.out.println(paintedToy.getDescription());
-        
+
     }
 }
