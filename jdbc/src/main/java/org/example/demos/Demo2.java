@@ -11,7 +11,7 @@ public class Demo2{
         Connection connection = null;
         try {
             /// Make connection to DB
-            connection = ConnectionUtils.getSQLConnection();
+            connection = ConnectionUtils.getSQLConnection("demo_jdbc");
 
             if (connection != null){
                 System.out.println("Connected !!!");

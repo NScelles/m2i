@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class  StudentService{
+public class StudentService{
 
     public static int deleteStudent(Connection connection,int id) throws SQLException {
         String request = "DELETE FROM student WHERE id_student = ?";

@@ -1,31 +1,25 @@
-package org.example.exercice1;
+package org.example.utils;
+
+
+
+import org.example.exercice1.Student;
+import org.example.exercice1.StudentService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Scanner;
 
-import static org.example.utils.ConnectionUtils.closeConnection;
-import static org.example.utils.ConnectionUtils.makeConnection;
 import static org.example.utils.Utils.getInt;
 import static org.example.utils.Utils.getString;
 
-public class Exercice1 {
-    public static void main(String[] args) {
-        Connection connection = makeConnection();
-        try {
-            System.out.println("Bienvenue dans le lycée Marie Curie:");
-            ihm(connection);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            closeConnection(connection);
-        }
-    }
+public class ConsoleIhm<T> {
+    private T personService;
 
-    private static void ihm(Connection connection) throws SQLException {
-        int userResponse;
-        do {
+    public static void start(Connection connection) throws SQLException {
+        boolean running = true;
+        while (running) {
             System.out.println("""
                         1 - Ajouter un étudiant
                         2 - Afficher tous les étudiants
@@ -33,16 +27,17 @@ public class Exercice1 {
                         4 - Supprimer un étudiant
                         0 - Quitter
                         """);
-            userResponse = getInt("Choix :");
-            switch (userResponse) {
-
-                case 0 -> System.out.println("Aurevoir");
+            int choice = getInt("Choix :");
+            switch (choice) {
+                case 0 -> running=false;
                 case 1 -> addStudent(connection);
                 case 2 -> showStudents(connection);
                 case 3 -> showStudent(connection);
                 case 4 -> deleteStudent(connection);
+                default -> System.out.println("Choix invalide");
             }
-        } while (userResponse != 0);
+        }
+        System.out.println("Au revoir !");
     }
 
     private static void deleteStudent(Connection connection) throws SQLException {
@@ -81,4 +76,5 @@ public class Exercice1 {
         int nbRow = StudentService.addStudent(connection,firstname,lastname,idClass,degreeDate);
         System.out.println( nbRow + " row(s) affected");
     }
+
 }

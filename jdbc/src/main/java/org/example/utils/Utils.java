@@ -1,5 +1,8 @@
 package org.example.utils;
 
+import javax.swing.*;
+import java.io.Console;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public abstract class Utils {
@@ -7,6 +10,31 @@ public abstract class Utils {
     public static void main(String[] args) {
         for (int i = 0;i<100;i++)
             System.out.println(getRandomEntier(0,100));
+    }
+
+    public static String getPassword(){
+        final String passwd;
+        final String message = "Enter password";
+        if( System.console() == null ) {
+            final JPasswordField pf = new JPasswordField();
+            passwd = JOptionPane.showConfirmDialog( null, pf, message, JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE ) == JOptionPane.OK_OPTION ?
+                    new String( pf.getPassword() ) :
+                    "cancel"; }
+        else passwd = new String( System.console().readPassword( "%s> ", message ));
+
+        return passwd;
+    }
+
+    public static String getPassword(String demande){
+        Console console;
+        char[] password;
+        System.out.println(demande);
+        if ((console = System.console()) != null &&
+                ( password = console.readPassword("[%s]", "Password:")) != null) {
+            return Arrays.toString(password);
+        } else
+            return new Scanner(System.in).nextLine();
     }
 
     public static String getString(String demande){

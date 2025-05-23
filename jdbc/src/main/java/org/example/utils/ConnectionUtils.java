@@ -4,22 +4,34 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static org.example.utils.Utils.getString;
+import static org.example.utils.Utils.*;
 
 public class ConnectionUtils {
-    public static Connection getSQLConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/demo_jdbc";
+    public static Connection getSQLConnection(String db) throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/"+db;
         String username = "root";
-        String password = getString("Mot de passe BDD : ");
+        String password = getPassword();
 
             Connection connection = DriverManager.getConnection(url,username,password);
             return connection;
     }
 
+    public static Connection getConnection(String db) throws SQLException {
+        Connection connection = null;
+            connection = org.example.utils.ConnectionUtils.getSQLConnection(db);
+            if (connection != null){
+                System.out.println("\n\n\n\n\n\n\n\nConnected !!!");
+            }else {
+                System.out.println("Connexion failed verify ConnectionUtils");
+            }
+        return connection;
+    }
+
+
     public static Connection makeConnection(){
         Connection connection = null;
         try {
-             connection = org.example.utils.ConnectionUtils.getSQLConnection();
+             connection = org.example.utils.ConnectionUtils.getSQLConnection("demo_jdbc");
             if (connection != null){
                 System.out.println("\n\n\n\n\n\n\n\nConnected !!!");
             }else {
