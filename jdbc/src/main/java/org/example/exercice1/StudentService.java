@@ -1,11 +1,8 @@
-package org.example.exercices;
+package org.example.exercice1;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.example.utils.Utils.getInt;
-import static org.example.utils.Utils.getString;
 
 public class  StudentService{
 
@@ -39,7 +36,7 @@ public class  StudentService{
     }
 
     public static int addStudent(Connection connection,String firstname, String lastname, int idClass, String degreeDate) throws SQLException {
-        String preparedRequest = " INSERT INTO student (first_name,last_name,id_class,degree_date) VALUES (?,?,?,?)";
+        String preparedRequest = "INSERT INTO student (first_name,last_name,id_class,degree_date) VALUES (?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(preparedRequest);
         preparedStatement.setString(1,firstname);
         preparedStatement.setString(2,lastname);

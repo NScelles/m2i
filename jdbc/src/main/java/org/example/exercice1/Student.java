@@ -1,13 +1,4 @@
-package org.example.exercices;
-
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.example.utils.Utils.getInt;
-import static org.example.utils.Utils.getString;
+package org.example.exercice1;
 
 public class Student {
     private int id;
@@ -30,7 +21,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return  id + ")" + firstname + lastname + "Classe: " +  idClass + "a obtenu le diplome le " + degreeDate ;
+        return  id + ") " + firstname + " " +lastname + " Classe: " +  idClass + " a obtenu le diplome le " + degreeDate ;
     }
 
     public int getId() {
