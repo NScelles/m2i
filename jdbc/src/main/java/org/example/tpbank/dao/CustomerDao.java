@@ -1,6 +1,6 @@
-package org.example.exercice2.dao;
+package org.example.tpbank.dao;
 
-import org.example.exercice2.models.Customer;
+import org.example.tpbank.models.Customer;
 import org.example.utils.BaseDao;
 
 import java.sql.Connection;

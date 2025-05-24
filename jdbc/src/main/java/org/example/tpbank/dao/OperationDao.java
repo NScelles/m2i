@@ -1,8 +1,7 @@
-package org.example.exercice2.dao;
+package org.example.tpbank.dao;
 
-import org.example.exercice2.models.Customer;
-import org.example.exercice2.models.Operation;
-import org.example.exercice2.models.OperationStatus;
+import org.example.tpbank.models.Operation;
+import org.example.tpbank.models.OperationStatus;
 import org.example.utils.BaseDao;
 
 import java.sql.Connection;
@@ -11,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.exercice2.models.OperationStatus.DEPOSIT;
+import static org.example.tpbank.models.OperationStatus.DEPOSIT;
 
 public class OperationDao extends BaseDao<Operation> {
 

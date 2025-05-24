@@ -1,7 +1,7 @@
-package org.example.exercice2.models;
+package org.example.tpbank.models;
 
 import lombok.Data;
-import lombok.Getter;
+
 @Data
 public  class Customer {
     private int id;

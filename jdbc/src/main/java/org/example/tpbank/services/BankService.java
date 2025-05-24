@@ -1,17 +1,17 @@
-package org.example.exercice2.services;
+package org.example.tpbank.services;
 
-import org.example.exercice2.dao.AccountDao;
-import org.example.exercice2.dao.CustomerDao;
-import org.example.exercice2.dao.OperationDao;
-import org.example.exercice2.models.Account;
-import org.example.exercice2.models.Customer;
-import org.example.exercice2.models.Operation;
+import org.example.tpbank.dao.AccountDao;
+import org.example.tpbank.dao.CustomerDao;
+import org.example.tpbank.dao.OperationDao;
+import org.example.tpbank.models.Account;
+import org.example.tpbank.models.Customer;
+import org.example.tpbank.models.Operation;
+import org.example.tpbank.models.OperationStatus;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import static org.example.utils.ConnectionUtils.getConnection;
-import static org.example.utils.ConnectionUtils.makeConnection;
 
 public class BankService {
     private AccountDao accountDao;
@@ -33,12 +33,16 @@ public class BankService {
     public boolean createCustomerAccount(String firstName, String lastName, String phone){
         Customer customer = new Customer(firstName,lastName,phone);
         Account account;
+        Operation operation;
         try {
             if(customerDao.save(customer)){
                 int customerId = customerDao.get().getLast().getId();
                 account = new Account(customerId,customer);
-                if(accountDao.save(account))
-                    return true;
+                if(accountDao.save(account)) {
+                    operation = new Operation(0.0, OperationStatus.DEPOSIT,customerId);
+                    if (operationDao.save(operation))
+                        return true;
+                }
             }
 
         }catch (SQLException e){

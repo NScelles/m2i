@@ -1,11 +1,7 @@
-package org.example.exercice2.utils;
+package org.example.tpbank.utils;
 
-import org.example.exercice2.models.Account;
-import org.example.exercice2.models.Operation;
-import org.example.exercice2.services.BankService;
-
-import java.sql.Connection;
-import java.sql.SQLException;
+import org.example.tpbank.models.Account;
+import org.example.tpbank.services.BankService;
 
 import static org.example.utils.Utils.*;
 

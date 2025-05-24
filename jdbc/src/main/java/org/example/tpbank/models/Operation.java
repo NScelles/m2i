@@ -1,4 +1,4 @@
-package org.example.exercice2.models;
+package org.example.tpbank.models;
 
 import lombok.Data;
 
