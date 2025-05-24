@@ -1,6 +1,6 @@
 package org.example.tpbank.models;
 
-public enum OperationStatus {
+public enum     OperationStatus {
     DEPOSIT,
     WITHDRAWL
 }

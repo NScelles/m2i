@@ -37,4 +37,14 @@ public class Account {
         operations = operation;
         this.totalAmount = totalAmount;
     }
+
+    @Override
+    public String toString() {
+        return "Account :\n " +
+                "id: " + id + "\n" +
+                "customerId: " + customerId + "\n" +
+                "customer: " + customer + "\n" +
+                "operations: " + operations + "\n" +
+                "totalAmount: " + totalAmount;
+    }
 }

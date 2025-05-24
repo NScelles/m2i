@@ -22,4 +22,11 @@ public @Data class Operation {
         this.status = status;
         this.accountId = accountId;
     }
+
+    @Override
+    public String toString() {
+        return "\n" +
+                "amount: " + amount +
+                " status: " + status;
+    }
 }

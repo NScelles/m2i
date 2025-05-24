@@ -28,4 +28,11 @@ public  class Customer {
         this.lastName = lastName;
         this.phone = phone;
     }
+
+    @Override
+    public String toString() {
+        return  "firstName: " + firstName +
+                "lastName: " + lastName +
+                "phone: " + phone ;
+    }
 }
