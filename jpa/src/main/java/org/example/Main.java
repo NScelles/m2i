@@ -8,5 +8,7 @@ public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa_demo");
         EntityManager em = emf.createEntityManager();
+
+
     }
 }
