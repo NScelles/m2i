@@ -8,7 +8,7 @@
 
              version="3.0">
 
-    <persistence-unit name="demo_jpa">
+    <persistence-unit name="jpa_demo">
 
         <description>Persistence pour demo jpa a M2i</description>
 
