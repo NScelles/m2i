@@ -1,4 +1,4 @@
-package org.example.entity;
+package org.example.demos.entity;
 
 
 import lombok.AllArgsConstructor;
@@ -25,4 +25,10 @@ public class Account {
     private double amount;
     private String customerName;
     private String accountNumber;
+
+    public Account(double amount, String customerName, String accountNumber) {
+        this.amount = amount;
+        this.customerName = customerName;
+        this.accountNumber = accountNumber;
+    }
 }

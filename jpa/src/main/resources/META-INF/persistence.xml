@@ -10,15 +10,18 @@
 
     <persistence-unit name="jpa_demo">
 
+
         <description>Persistence pour demo jpa a M2i</description>
 
-        <class>org.example.entity.Account</class>
+        <class>org.example.demos.entity.Account</class>
+        <class>org.example.exercice1.entity.animal.Animal</class>
+
 
         <properties>
 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_demo"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa"/>
 
             <property name="javax.persistence.jdbc.user" value="root"/>
 
