@@ -6,8 +6,8 @@ import org.example.exercice1.services.ZooService;
 
 import java.sql.Date;
 
-import static org.example.exercice1.utils.Utils.getInt;
-import static org.example.exercice1.utils.Utils.getString;
+import static org.example.utils.Utils.getInt;
+import static org.example.utils.Utils.getString;
 
 public class ZooIhm {
 

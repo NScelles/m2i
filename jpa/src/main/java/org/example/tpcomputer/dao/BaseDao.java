@@ -9,9 +9,39 @@ public abstract class BaseDao<T> {
     private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa_demo");
     protected EntityManager em = emf.createEntityManager();
 
-    public abstract boolean save(T element);
-    public abstract boolean update(T element);
-    public abstract boolean delete(T element);
-    public abstract T get(int id);
+    public T save (T element){
+        em.getTransaction().begin();
+        em.persist(element);
+        em.getTransaction().commit();
+        return element;
+    }
+
+    public T update (T element){
+        try{
+            em.getTransaction().begin();
+            em.merge(element);
+            em.getTransaction().commit();
+            return element;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public boolean delete (int id,Class<T> tClass){
+        T elementFound = get(id,tClass);
+        if(elementFound != null){
+            em.getTransaction().begin();
+            em.remove(elementFound);
+            em.getTransaction().commit();
+            return true;
+        }
+        return false;
+    }
+
+    public T get(int id,Class<T> tClass){
+        return em.find(tClass,id);
+    }
+
     public abstract List<T> get();
 }

@@ -23,6 +23,17 @@ import javax.persistence.*;
  */
 @Embeddable
 public class Identification {
-    private String macAddress;
-    private String ipAddress;
+    private String macAdress;
+    private String ipAdress;
+
+    public String getDisplay(){
+        return "Adresse IP: " + ipAdress + " | Adresse MAC: " + macAdress;
+    }
+
+    @Override
+    public String toString() {
+        return "Identification : " +
+                "macAdress: " + macAdress +
+                " | ipAdress: " + ipAdress;
+    }
 }

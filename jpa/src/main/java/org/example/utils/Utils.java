@@ -1,4 +1,4 @@
-package org.example.exercice1.utils;
+package org.example.utils;
 
 import java.io.Console;
 import java.util.Arrays;
