@@ -83,7 +83,6 @@ public class Computer {
     @ManyToMany(mappedBy = "computers")
     private List<Project> projects;
 
-
     @Override
     public String toString() {
         return "\nComputer: " +

@@ -7,17 +7,17 @@ import org.example.tpcomputer.services.EquipementService;
 
 public class Main {
     public static void main(String[] args) {
-//        EquipementService equipementService = new EquipementService();
+//        EquipementService marketService = new EquipementService();
 //
-//        equipementService.createComputer("DELL", Identification.builder().ipAdress("08185941594").macAdress("417189 8948 17894191 89").build());
-//        equipementService.createComputer("HP", Identification.builder().ipAdress("714844889").macAdress("243978 28752 32786 689732").build());
+//        marketService.createComputer("DELL", Identification.builder().ipAdress("08185941594").macAdress("417189 8948 17894191 89").build());
+//        marketService.createComputer("HP", Identification.builder().ipAdress("714844889").macAdress("243978 28752 32786 689732").build());
 //
-//        System.out.println(equipementService.get());
+//        System.out.println(marketService.get());
 //
         EquipementService equipementService = new EquipementService();
 
-        //equipementService.createOperatingSystem("iOS","10");
-        //equipementService.createProcessor("AMD","Ryzen 7","580x");
+        //marketService.createOperatingSystem("iOS","10");
+        //marketService.createProcessor("AMD","Ryzen 7","580x");
 
         GlobalIhm.start();
     }
