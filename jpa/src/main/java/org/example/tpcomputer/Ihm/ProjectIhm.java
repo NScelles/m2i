@@ -17,6 +17,7 @@ public class ProjectIhm extends Ihm {
                         4 - Modifier un projet
                         5 - Supprimer un projet
                         6 - Ajouter un PC à un projet
+                        7 - Retirer un PC à un projet
                         0 - Quitter la gestion de projets
                         """);
             int choice = getInt("Choix :");
@@ -28,6 +29,7 @@ public class ProjectIhm extends Ihm {
                 case 4 -> updateProjet();
                 case 5 -> deleteProject();
                 case 6 -> addComputerProject();
+                case 7 -> removeComputerProject();
                 default -> System.out.println("Choix invalide");
             }
         }
@@ -38,6 +40,12 @@ public class ProjectIhm extends Ihm {
         int idProject = getInt("Quels est l'ID du Projet ?");
         int idComputer = getInt("Quels est l'ID du PC ?");
         equipementService.addComputerProject(idProject, idComputer);
+    }
+
+    private static void removeComputerProject() {
+        int idProject = getInt("Quels est l'ID du Projet ?");
+        int idComputer = getInt("Quels est l'ID du PC ?");
+        equipementService.removeComputerProject(idProject, idComputer);
     }
 
 
@@ -54,13 +62,13 @@ public class ProjectIhm extends Ihm {
     }
 
     private static void showAllProjet() {
-        System.out.println(equipementService.getProjects());
+        System.out.println(equipementService.getProject());
     }
 
 
     private static void showProjetById() {
-        int id = getInt("Quels est l'ID du PC ?");
-        System.out.println(equipementService.getComputer(id));
+        int id = getInt("Quels est l'ID du Projet ?");
+        System.out.println(equipementService.getProject(id));
     }
 
     private static void createProjet() {

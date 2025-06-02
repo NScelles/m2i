@@ -70,11 +70,11 @@ public class EquipementService {
         projectDao.save(project);
     }
 
-    public Project getProjects(int id){
+    public Project getProject(int id){
         return projectDao.get(id,Project.class);
     }
 
-    public List<Project> getProjects(){
+    public List<Project> getProject(){
         return projectDao.get();
     }
 
@@ -88,6 +88,10 @@ public class EquipementService {
 
     public void addComputerProject(int idProject, int idComputer) {
         projectDao.addCumputer(idProject,idComputer);
+    }
+
+    public void removeComputerProject(int idProject, int idComputer) {
+        projectDao.removeComputer(idProject,idComputer);
     }
 
 }

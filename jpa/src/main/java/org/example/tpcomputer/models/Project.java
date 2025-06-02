@@ -34,6 +34,10 @@ public class Project {
         computers.add(computer);
     }
 
+    public void removeComputer(Computer computer) {
+        computers.remove(computer);
+    }
+
     @Override
     public String toString() {
         return "\nProject:" +

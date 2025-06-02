@@ -83,6 +83,7 @@ public class Computer {
     @ManyToMany(mappedBy = "computers")
     private List<Project> projects;
 
+
     @Override
     public String toString() {
         return "\nComputer: " +
@@ -92,4 +93,6 @@ public class Computer {
                 " | OS: [" + operatingSystem.getDisplay() + "]" +
                 " | Processeur: [" + processor.getDisplay() + "]";
     }
+
+
 }
