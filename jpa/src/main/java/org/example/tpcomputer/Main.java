@@ -1,6 +1,7 @@
 package org.example.tpcomputer;
 
 import org.example.tpcomputer.Ihm.EquipementIhm;
+import org.example.tpcomputer.Ihm.GlobalIhm;
 import org.example.tpcomputer.models.Identification;
 import org.example.tpcomputer.services.EquipementService;
 
@@ -15,9 +16,9 @@ public class Main {
 //
         EquipementService equipementService = new EquipementService();
 
-        equipementService.createOperatingSystem("iOS","10");
-        equipementService.createProcessor("AMD","Ryzen 7","580x");
+        //equipementService.createOperatingSystem("iOS","10");
+        //equipementService.createProcessor("AMD","Ryzen 7","580x");
 
-        EquipementIhm.start();
+        GlobalIhm.start();
     }
 }

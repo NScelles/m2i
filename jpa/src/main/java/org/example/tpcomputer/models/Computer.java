@@ -73,13 +73,23 @@ public class Computer {
     @JoinColumn(name = "id_processor")
     private Processor processor;
 
+    /**
+     * Pour la dernière partie du TP, on a ajouté une relation @ManyToMany
+     * Il n'y pas grand de différent par rapport à une @ManyToOne
+     * Seulement la syntaxe (Voir la Classe Project)
+     * et la création d'une table d'association qui est faite automatiquement par JPA.
+     */
+
+    @ManyToMany(mappedBy = "computers")
+    private List<Project> projects;
+
     @Override
     public String toString() {
         return "\nComputer: " +
                 id +
                 " | model:" + model +
                 " | " + identification.getDisplay() +
-                " | " + operatingSystem +
-                " | " + processor;
+                " | OS: [" + operatingSystem.getDisplay() + "]" +
+                " | Processeur: [" + processor.getDisplay() + "]";
     }
 }

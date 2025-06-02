@@ -4,10 +4,8 @@ import lombok.NoArgsConstructor;
 import org.example.tpcomputer.dao.ComputerDao;
 import org.example.tpcomputer.dao.OperatingSystemDao;
 import org.example.tpcomputer.dao.ProcessorDao;
-import org.example.tpcomputer.models.Computer;
-import org.example.tpcomputer.models.Identification;
-import org.example.tpcomputer.models.OperatingSystem;
-import org.example.tpcomputer.models.Processor;
+import org.example.tpcomputer.dao.ProjectDao;
+import org.example.tpcomputer.models.*;
 
 
 import java.util.List;
@@ -18,6 +16,7 @@ public class EquipementService {
     private ComputerDao computerDao = new ComputerDao();
     private OperatingSystemDao operatingSystemDao = new OperatingSystemDao();
     private ProcessorDao processorDao = new ProcessorDao();
+    private ProjectDao projectDao = new ProjectDao();
 
     /// CRUD Computer
     public void createComputer(String model, Identification identification,int idProcessor, int idOS){
@@ -65,5 +64,30 @@ public class EquipementService {
         operatingSystemDao.save(os);
     }
 
+    /// CRUD Project
+    public void createProject(String name, String description){
+        Project project = Project.builder().name(name).description(description).build();
+        projectDao.save(project);
+    }
+
+    public Project getProjects(int id){
+        return projectDao.get(id,Project.class);
+    }
+
+    public List<Project> getProjects(){
+        return projectDao.get();
+    }
+
+    public void updateProject(Project project) {
+        projectDao.update(project);
+    }
+
+    public void deleteProject(int id) {
+        projectDao.delete(id,Project.class);
+    }
+
+    public void addComputerProject(int idProject, int idComputer) {
+        projectDao.addCumputer(idProject,idComputer);
+    }
 
 }

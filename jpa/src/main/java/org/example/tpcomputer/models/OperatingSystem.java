@@ -32,6 +32,10 @@ public class OperatingSystem {
     @JoinColumn(name = "id")
     private List<Computer> computer;
 
+    public String getDisplay(){
+        return "Nom: " + name + " | Version: " + version;
+    }
+
     @Override
     public String toString() {
         return "OperatingSystem{" +

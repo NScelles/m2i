@@ -7,9 +7,7 @@ import org.example.tpcomputer.services.EquipementService;
 import static org.example.utils.Utils.getInt;
 import static org.example.utils.Utils.getString;
 
-public class EquipementIhm {
-
-    private static EquipementService equipementService = new EquipementService();
+public class EquipementIhm extends Ihm {
 
 
 
@@ -24,7 +22,7 @@ public class EquipementIhm {
                         5 - Supprimer un PC
                         6 - Voir les Processeurs
                         7 - Voir les OS
-                        0 - Quitter
+                        0 - Quitter la gestion d'équipement
                         """);
             int choice = getInt("Choix :");
             switch (choice) {

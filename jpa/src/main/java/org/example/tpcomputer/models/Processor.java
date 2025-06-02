@@ -33,6 +33,10 @@ public class Processor {
     @OneToMany(mappedBy = "processor")
     private List<Computer> computers;
 
+    public String getDisplay(){
+        return "Brand: " + brand + "Nom: " + name + " | Model: " + model;
+    }
+
     @Override
     public String toString() {
         return "Processor{" +
