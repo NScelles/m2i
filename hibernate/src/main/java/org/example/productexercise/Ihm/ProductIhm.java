@@ -21,6 +21,8 @@ public class ProductIhm {
                         3 - Rechercher un produit
                         4 - Modifier un produit
                         5 - Supprimer un produit
+                        6 - Afficher les produits supérieure à un prix donné
+                        7 - Afficher les produits achetés entre 2 dates
                         0 - Quitter
                         """);
             int choice = getInt("Choix :");
@@ -31,10 +33,23 @@ public class ProductIhm {
                 case 3 -> showProdutById();
                 case 4 -> updateProduct();
                 case 5 -> deleteProduct();
+                case 6 -> getProductsPriceUpTo();
+                case 7 -> getProductsBuyBetween();
                 default -> System.out.println("Choix invalide");
             }
         }
         System.out.println("Au revoir !");
+    }
+
+    private static void getProductsBuyBetween() {
+        LocalDate dateMin = LocalDate.parse(getString("Quel est la date minimum ? (yyyy-MM-dd)"));
+        LocalDate dateMax = LocalDate.parse(getString("Quel est la date maximum ? (yyyy-MM-dd)"));
+        System.out.println(productService.getProductsBuyBetween(dateMin,dateMax));
+    }
+
+    private static void getProductsPriceUpTo() {
+        double priceMin = getDouble("Quel est le prix minimum des produits à afficher");
+        System.out.println(productService.getProductsPriceUpTo(priceMin));
     }
 
     private static void deleteProduct() {

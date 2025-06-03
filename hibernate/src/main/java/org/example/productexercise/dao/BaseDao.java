@@ -7,6 +7,11 @@ import java.util.List;
 
 public abstract class BaseDao<T> {
     protected Session session = SessionFactorySingleton.getSession();
+    protected Class<T> tClass;
+
+    public BaseDao(Class<T> tClass) {
+        this.tClass = tClass;
+    }
 
     public T save (T element){
         session.beginTransaction();
@@ -24,13 +29,12 @@ public abstract class BaseDao<T> {
     }
 
     public T get (int id, Class<T> tClass ){
+
         return session.get(tClass,id);
     }
 
-
-    public abstract List<T> get ();
-        //return session.createQuery("select p from Personne p", Personne.class).getResultList();
-
-
-
+    public  List<T> get (Class<T> tClass) {
+        //String[] className = ;
+        return session.createQuery("select c from "+tClass.getSimpleName()+" c", tClass).getResultList();
+    }
 }

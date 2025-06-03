@@ -19,7 +19,7 @@ public class ProductService {
     }
 
     public List<Product> getProducts(){
-        return productDao.get();
+        return productDao.get(Product.class);
     }
 
     public void updateProduct(Product product) {
@@ -28,6 +28,14 @@ public class ProductService {
 
     public void deleteProduct(Product product) {
         productDao.delete(product);
+    }
+
+    public List<Product> getProductsPriceUpTo(double priceMin){
+        return productDao.getProductsPriceUpTo(priceMin);
+    }
+
+    public List<Product> getProductsBuyBetween(LocalDate dateMin, LocalDate dateMax){
+        return productDao.getProductsBuyBetween(dateMin,dateMax);
     }
 
 }
