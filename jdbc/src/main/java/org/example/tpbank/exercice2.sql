@@ -1,3 +1,4 @@
+DROP DATABASE tp_jdbc;
 CREATE DATABASE IF NOT EXISTS  tp_jdbc;
 
 USE tp_jdbc;
@@ -19,7 +20,7 @@ CREATE TABLE IF NOT EXISTS accounts(
 
 CREATE TABLE IF NOT EXISTS operations(
 	id_operation INT NOT NULL AUTO_INCREMENT,
-	amount FLOAT(255,2) NOT NULL,
+	amount DOUBLE(255,2) NOT NULL,
     operation_status VARCHAR(10) NOT NULL CHECK(operation_status="DEPOSIT" OR operation_status="WITHDRAWL"),
 	id_account INT NOT NULL,
     PRIMARY KEY(id_operation),
