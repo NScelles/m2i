@@ -1,6 +1,7 @@
 package org.example.productexercise.services;
 
 import org.example.productexercise.dao.ProductDao;
+import org.example.productexercise.models.Article;
 import org.example.productexercise.models.Product;
 
 import java.time.LocalDate;
@@ -38,4 +39,23 @@ public class ProductService {
         return productDao.getProductsBuyBetween(dateMin,dateMax);
     }
 
+    public List<Article> getArtilcesStockLowerThan(int stock){
+        return productDao.getArticlesStockLowerThan(stock);
+    }
+
+    public List<Product> getProductsByBrand(String brand){
+        return productDao.getProductsByBrand(brand);
+    }
+
+    public Double getAvgPrice(){
+        return productDao.getAvgPrice();
+    }
+
+    public boolean deleteByBrand(String brand){
+        return productDao.deleteByBrand(brand);
+    }
+
+    public List<Product> getStocksByBrand(String brand){
+        return productDao.getStocksByBrand(brand);
+    }
 }
