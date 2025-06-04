@@ -61,4 +61,11 @@ public class ProductDao extends BaseDao<Product>{
         session.getTransaction().commit();
         return success>0;
     }
+
+    public List<Product> getMostRatingProducts(double avg) {
+        TypedQuery<Product> query = session.createQuery("select c.product from Comment c group by c.product having avg(c.rating) >= :avg", Product.class);
+        query.setParameter("avg",avg);
+        return query.getResultList();
+    }
+    
 }

@@ -28,13 +28,15 @@ public abstract class BaseDao<T> {
         return true;
     }
 
-    public T get (int id, Class<T> tClass ){
+    public T get (int id){
 
         return session.get(tClass,id);
     }
 
-    public  List<T> get (Class<T> tClass) {
-        //String[] className = ;
-        return session.createQuery("select c from "+tClass.getSimpleName()+" c", tClass).getResultList();
+    public  List<T> get () {
+        List<T> elements = session.createQuery("select c from "+tClass.getSimpleName()+" c", tClass).getResultList();
+        for (T element:elements)
+            session.refresh(element);
+        return elements;
     }
 }

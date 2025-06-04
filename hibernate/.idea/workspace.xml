@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43e96188-0211-461f-8dad-421ac1e46c78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/models/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/Ihm/CommentIhm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/Ihm/GlobalIhm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/Ihm/Ihm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/Ihm/ImageIhm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/CommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/ImageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/models/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/models/Image.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/productexercise/Ihm/ProductIhm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/Ihm/ProductIhm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/BaseDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/productexercise/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/models/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/productexercise/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

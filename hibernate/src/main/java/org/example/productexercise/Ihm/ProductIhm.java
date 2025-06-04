@@ -8,10 +8,7 @@ import java.time.LocalDate;
 
 import static org.example.utils.Utils.*;
 
-public class ProductIhm {
-
-    private static ProductService productService = new ProductService();
-
+public class ProductIhm extends Ihm{
 
     public static void start() {
         boolean running = true;
@@ -29,6 +26,7 @@ public class ProductIhm {
                         10 - Afficher le prix moyen des produits
                         11 - Afficher les produits d'une marque
                         12 - Supprimer les produits d'une marque
+                        13 - Afficher les produits les mieux notés
                         0 - Quitter
                         """);
             int choice = getInt("Choix :");
@@ -46,10 +44,17 @@ public class ProductIhm {
                 case 10 -> getAvgPrice();
                 case 11 -> getProductsByBrand();
                 case 12 -> deleteProductByBrand();
+                case 13 -> showMostRatingProducts();
                 default -> System.out.println("Choix invalide");
             }
         }
         System.out.println("Au revoir !");
+    }
+
+    private static void showMostRatingProducts() {
+        double avg = getDouble("La moyenne des notes est supérieure à :");
+        System.out.println(productService.getMostRatingProducts(avg));
+
     }
 
     private static void deleteProductByBrand() {

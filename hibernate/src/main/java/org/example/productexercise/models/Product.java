@@ -6,11 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -27,6 +25,12 @@ public class Product {
     private LocalDate purchaseDate;
     private double price;
     private int stock;
+
+    @OneToMany(mappedBy = "product",cascade = {CascadeType.PERSIST,CascadeType.REFRESH})
+    private List<Image> images;
+
+    @OneToMany(mappedBy = "product",cascade = {CascadeType.PERSIST,CascadeType.REFRESH})
+    private List<Comment> comments;
 
     public void update(String brand, String ref, LocalDate purchaseDate, double price, int stock){
         this.brand =brand;
