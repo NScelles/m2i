@@ -1,0 +1,114 @@
+html{
+    margin:0;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 35vw;
+    display: grid;
+    grid-template-areas:
+    "top top top top"
+    "top top top top"
+    "cancel pi pourcent divide"
+    "seven eight nine multiply"
+    "four five six less"
+    "one two three plus"
+    "zero point equal equal";
+}
+
+body>div{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: solid 1.5px black;
+    font-weight:bold;
+    font-size: 120%;
+}
+
+#top{
+    grid-area: top;
+    background-color: black;
+}
+
+#cancel{
+    grid-area: cancel;
+}
+
+#pi{
+    grid-area: pi;
+}
+
+#pourcent{
+    grid-area: pourcent;
+}
+
+#divide{
+    grid-area: divide;
+}
+
+#seven{
+    grid-area: seven;
+}
+
+#eight{
+    grid-area: eight;
+}
+
+#nine{
+    grid-area: nine;
+}
+
+#multiply{
+    grid-area: multiply;
+}
+
+#four{
+    grid-area: four;
+}
+
+#five{
+    grid-area: five;
+}
+
+#six{
+    grid-area: six;
+}
+
+#less{
+    grid-area: less;
+}
+
+#one{
+    grid-area: one;
+}
+
+#two{
+    grid-area: two;
+}
+
+#three{
+    grid-area: three;
+}
+
+#plus{
+    grid-area: plus;
+}
+
+#zero{
+    grid-area: zero;
+}
+
+#point{
+    grid-area: point;
+}
+
+#equal{
+    grid-area: equal;
+}
+
+.operation{
+    background-color: orange;
+}

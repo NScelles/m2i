@@ -7,6 +7,12 @@
         <mapping class="org.example.productexercise.models.Product" />
         <mapping class="org.example.productexercise.models.Image" />
         <mapping class="org.example.productexercise.models.Comment" />
+        <mapping class="org.example.tpproduct.models.articles.Article" />
+        <mapping class="org.example.tpproduct.models.articles.Food" />
+        <mapping class="org.example.tpproduct.models.articles.Electronic" />
+        <mapping class="org.example.tpproduct.models.articles.clothing.Clothes" />
+        <mapping class="org.example.tpproduct.models.selling.Selling" />
+        <mapping class="org.example.tpproduct.models.Customer" />
     </session-factory>
 </hibernate-configuration>
 

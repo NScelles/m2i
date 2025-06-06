@@ -67,5 +67,5 @@ public class ProductDao extends BaseDao<Product>{
         query.setParameter("avg",avg);
         return query.getResultList();
     }
-    
+
 }

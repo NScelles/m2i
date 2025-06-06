@@ -1,0 +1,118 @@
+html{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#containerFlag{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#flag{
+    height: 30vh;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:30px;
+}
+
+p{
+    position: absolute;
+}
+
+
+#containerStars{
+    animation: rotate 10s infinite ;
+    height: 20vh;
+    width: 20vh;
+}
+
+span:not(#containerStars){
+    height: 20vh;
+    position: absolute;
+    width: 20vh;
+}
+
+img{
+    height: 10px;
+    color: #ffff00;
+    animation: rotate 3s infinite ;
+}
+
+#un{
+    transform: rotate(24deg);
+}
+
+#deux{
+    transform: rotate(48deg);
+}
+
+#trois{
+    transform: rotate(72deg);
+}
+
+#quatre{
+    transform: rotate(96deg);
+}
+
+#cinq{
+    transform: rotate(120deg);
+}
+
+#six{
+    transform: rotate(144deg);
+}
+
+#sept{
+    transform: rotate(168deg);
+}
+
+#huit{
+    transform: rotate(192deg);
+}
+
+#neuf{
+    transform: rotate(216deg);
+}
+
+#dix{
+    transform: rotate(240deg);
+}
+
+#onze{
+    transform: rotate(264deg);
+}
+
+#douze{
+    transform: rotate(288deg);
+}
+
+#treize{
+    transform: rotate(312deg);
+}
+
+#quatorze{
+    transform: rotate(336deg);
+}
+
+#quinze{
+    transform: rotate(360deg);
+}
+
+  @keyframes rotate {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: rotate(0.5turn);
+    }
+}
