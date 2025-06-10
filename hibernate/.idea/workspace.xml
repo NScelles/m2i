@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43e96188-0211-461f-8dad-421ac1e46c78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/Ihm/ArticleIhm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/Ihm/CustomerIhm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/Ihm/GlobalIhm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/Ihm/Ihm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/Ihm/SellingIhm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/dao/ArticleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/dao/BaseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/dao/CustomerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/dao/SellingDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/articles/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/articles/Articles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/articles/Electronic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/articles/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/articles/clothing/Categories.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/articles/clothing/Clothes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/selling/Selling.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/models/selling/SellingStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/tpproduct/services/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/productexercise/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-    </list>
+    <list default="true" id="43e96188-0211-461f-8dad-421ac1e46c78" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
