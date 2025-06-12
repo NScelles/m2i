@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43e96188-0211-461f-8dad-421ac1e46c78" name="Changes" comment="" />
+    <list default="true" id="43e96188-0211-461f-8dad-421ac1e46c78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/java/org/example/exercisefive/controllers/DogServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/java/org/example/exercisefive/dao/BaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/java/org/example/exercisefive/dao/DogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/java/org/example/exercisefive/models/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/java/org/example/exercisefive/services/PetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/java/org/example/exercisefive/utils/SessionFactorySingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/resources/hibernate.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/webapp/WEB-INF/styles/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jakarta/exercisefive/src/main/webapp/dogPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2xzWLer0DULGx2wFk2ELK2xh4A5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,12 +49,20 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Administrateur/Desktop/Support de cours/m2iFormationJava/hibernate/src/main/java/org/example/tpproduct"
+    "last_opened_file_path": "C:/Users/Administrateur/AppData/Roaming/JetBrains/IntelliJIdea2025.1/scratches/utils",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrateur\AppData\Roaming\JetBrains\IntelliJIdea2025.1\scratches\utils" />
       <recent name="C:\Users\Administrateur\Desktop\Support de cours\m2iFormationJava\hibernate\src\main\java\org\example\tpproduct" />
       <recent name="C:\Users\Administrateur\Desktop\Support de cours\m2iFormationJava\hibernate\src\main\java\org\example\utils" />
       <recent name="C:\Users\Administrateur\Desktop\Support de cours\m2iFormationJava\hibernate\src\main\java\org\example\demos" />
@@ -88,6 +108,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -96,7 +124,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748941330340</updated>
+      <workItem from="1749712380583" duration="39000" />
+      <workItem from="1749712577663" duration="2363000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
