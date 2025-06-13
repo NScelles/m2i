@@ -1,13 +1,12 @@
 package org.example.exericisesix.resources;
 
 import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.example.exericisesix.models.Car;
 import org.example.exericisesix.services.CarService;
-
-import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
 @Path("/car")
@@ -39,7 +38,7 @@ public class CarResources {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Car add(Car car) {
-        car.setId(carService.setId());
+        //.setId(carService.setId());
         carService.save(car.getId(),car);
         return carService.get(car.getId());
     }
