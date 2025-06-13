@@ -24,24 +24,11 @@ public class DogServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String pathInfo = req.getPathInfo();
         switch (pathInfo){
-            case "/list" -> {
-                req.setAttribute("dogs", petService.getDogs());
-                req.getRequestDispatcher("/WEB-INF/dogs/list.jsp").forward(req, resp);
-            }
-            case "/add" -> req.getRequestDispatcher("/WEB-INF/dogs/add.jsp").forward(req,resp);
-            case "/edit" -> {
-                int id = Integer.parseInt(req.getParameter("id"));
-                req.setAttribute("dog", petService.getDog(id));
-                req.getRequestDispatcher("/WEB-INF/dogs/edit.jsp").forward(req,resp);
-            }
-            case "/delete" -> {
-                int id = Integer.parseInt(req.getParameter("id"));
-                petService.deleteDog(petService.getDog(id));
-                req.setAttribute("dogs", petService.getDogs());
-                req.getRequestDispatcher("/WEB-INF/dogs/list.jsp").forward(req,resp);
-            }
+            case "/list" -> showAll(req,resp);
+            case "/add" -> showAdd(req,resp);
+            case "/edit" -> showEdit(req,resp);
+            case "/delete" -> delete(req,resp);
         }
-        //getServletContext().getRequestDispatcher("/dogPage.jsp").forward(req,resp);
     }
 
     @Override
@@ -60,4 +47,26 @@ public class DogServlet extends HttpServlet {
         }
         doGet(req,resp);
     }
+
+    private void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        petService.deleteDog(petService.getDog(id));
+        resp.sendRedirect(req.getContextPath()+"/dog/list");
+    }
+
+    private void showAdd(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/dogs/add.jsp").forward(req,resp);
+    }
+
+    private void showEdit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        req.setAttribute("dog", petService.getDog(id));
+        req.getRequestDispatcher("/WEB-INF/dogs/edit.jsp").forward(req,resp);
+    }
+
+    private void showAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("dogs", petService.getDogs());
+        req.getRequestDispatcher("/WEB-INF/dogs/list.jsp").forward(req, resp);
+    }
+
 }
