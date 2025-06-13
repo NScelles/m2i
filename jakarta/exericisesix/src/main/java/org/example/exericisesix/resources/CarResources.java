@@ -77,7 +77,7 @@ public class CarResources {
     @Path("delete/{id}")
     public Response delete(@PathParam("id") int id){
         if(carService.delete(id)){
-            return Response.ok().build();
+            return Response.ok(id).build();
         }else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
