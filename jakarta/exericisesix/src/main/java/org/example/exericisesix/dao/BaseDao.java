@@ -12,41 +12,84 @@ public abstract class BaseDao<T> {
     protected Session session;
     protected Class<T> tClass;
 
-    public BaseDao(Class<T> tClass, Session session) {
+    public BaseDao(Class<T> tClass) {
         this.tClass = tClass;
-        this.session = session;
     }
 
     public T save (T element){
-        session.beginTransaction();
+
+        try {
+            session= SessionFactorySingleton.getSession();
+            session.beginTransaction();
 //        session.getTransaction().begin();
-        session.persist(element);
-        session.getTransaction().commit();
+            session.persist(element);
+            session.getTransaction().commit();
+        } catch (Exception e){
+            session.getTransaction().rollback();
+            throw new RuntimeException(e);
+        }finally {
+            session.close();
+        }
         return element;
     }
 
     public T update (T element){
-        session.beginTransaction();
-        session.merge(element);
-        session.getTransaction().commit();
+
+        try {
+            session = SessionFactorySingleton.getSession();
+            session.beginTransaction();
+            session.merge(element);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
         return element;
     }
 
     public boolean delete (T element){
-        session.beginTransaction();
-        session.remove(element);
-        session.getTransaction().commit();
+        try {
+            session = SessionFactorySingleton.getSession();
+            session.beginTransaction();
+            session.remove(element);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
         return true;
     }
 
     public T get (int id){
-        return session.get(tClass,id);
+        T element = null;
+        try {
+            session = SessionFactorySingleton.getSession();
+            element = session.get(tClass,id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
+        return element;
     }
 
     public  List<T> get () {
-        List<T> elements = session.createQuery("select c from "+tClass.getSimpleName()+" c", tClass).getResultList();
-        for (T element:elements)
-            session.refresh(element);
+        List<T> elements = null;
+
+        try {
+            session = SessionFactorySingleton.getSession();
+            elements = session.createQuery("select c from "+tClass.getSimpleName()+" c", tClass).getResultList();
+            for (T element:elements)
+                session.refresh(element);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
         return elements;
     }
 }

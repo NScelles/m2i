@@ -11,6 +11,6 @@ import org.hibernate.Session;
 public class CarService extends BaseService<Car>{
 
     public CarService() {
-        super(new CarDao(SessionFactorySingleton.getSession()));
+        super(new CarDao());
     }
 }
