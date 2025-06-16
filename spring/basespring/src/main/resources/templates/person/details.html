@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person's details</title>
+</head>
+<body>
+    <h1>Person's details</h1>
+    <hr>
+        <p>Firstname: <span th:text="${firstName}"/></p>
+        <p>Lastname: <span th:text="${lastName}"/></p>
+    <hr>
+    <p th:if="${persons.isEmpty()}"></p>
+    <ul th:unless="${persons.isEmpty()}">
+        <li th:each="p : ${persons}"><span th:text="${p}"/></li>
+
+    </ul>
+</body>
+</html>

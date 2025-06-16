@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+</head>
+<body>
+<hr>
+<p th:if="${toDos.isEmpty()}">Ya pas de to Do</p>
+<table>
+    <caption>To List</caption>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>is Done</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="todo : ${toDos}">
+        <td th:text="${todo.getName()}" />
+        <td th:text="${todo.getDescription()}" />
+        <td th:text="${todo.getIsDone()}" />
+        <td ><a th:href='${ "/todo/" + todo.getId()}'> Voir plus</a> </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
