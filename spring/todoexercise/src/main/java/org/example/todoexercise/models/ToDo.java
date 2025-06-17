@@ -14,6 +14,4 @@ public class ToDo {
     private String name;
     private String description;
     private Boolean isDone;
-
-
 }
