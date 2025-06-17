@@ -29,12 +29,17 @@ public class ProductService {
     }
 
     public List<Product> getProductsByCategory(List<Product> productList, String category) {
-        //List<Product> productss = products.values().stream().max().toList();
-        return productList.stream().filter(p -> p.getCategory().equals(category)).toList();
+        if (category != null) {
+          productList =  productList.stream().filter(p -> p.getCategory().equals(category)).toList();
+        }
+        return productList;
     }
 
-    public List<Product> getProductsByPriceMax(List<Product> productList,double priceMax) {
-        return productList.stream().filter(p -> p.getPrice() < priceMax).toList();
+    public List<Product> getProductsByPriceMax(List<Product> productList,String priceMax) {
+        if (priceMax != null) {
+           productList = productList.stream().filter(p -> p.getPrice() < Double.parseDouble(priceMax)).toList();
+        }
+        return productList;
     }
 
 }

@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Controller
 public class ProductController {
@@ -22,6 +20,11 @@ public class ProductController {
     @Autowired
     public ProductController(ProductService productService) {
         this.productService = productService;
+    }
+
+    @GetMapping("/")
+    public String index(Model model) {
+        return "redirect:/list";
     }
 
     @GetMapping("/list")
@@ -40,13 +43,9 @@ public class ProductController {
     public String search(@RequestParam(value = "category",required = false) String category,
                          @RequestParam(value = "priceMax",required = false) String priceMax, Model model) {
         List<Product> productsList = productService.getProducts();
-        if (category != null) {
-            productsList = productService.getProductsByCategory(productsList, category);
-        }
-        if (priceMax != null) {
-            productsList = productService.getProductsByPriceMax(productsList, Double.parseDouble(priceMax));
-        }
+        productsList = productService.getProductsByCategory(productsList, category);
+        productsList = productService.getProductsByPriceMax(productsList, priceMax);
         model.addAttribute("products", productsList);
-        return "product/search";
+        return "product/list";
     }
 }
