@@ -5,9 +5,7 @@ import org.example.productexercise.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -47,5 +45,34 @@ public class ProductController {
         productsList = productService.getProductsByPriceMax(productsList, priceMax);
         model.addAttribute("products", productsList);
         return "product/list";
+    }
+
+    @GetMapping("/add")
+    public String add(Model model) {
+        boolean isExistProduct = false;
+        model.addAttribute("isExist", isExistProduct);
+        model.addAttribute("product", new Product());
+        return "product/add";
+    }
+
+    @PostMapping("/add")
+    public String add(@ModelAttribute Product product) {
+        productService.addProduct(product);
+        return "redirect:/list";
+        //return "redirect:/product/" + product.getId();
+    }
+
+    @GetMapping("/update/{id}")
+    public String update(@PathVariable UUID id, Model model) {
+        boolean isExistProduct = true;
+        model.addAttribute("isExist", isExistProduct);
+        model.addAttribute("product", productService.getProduct(id));
+        return "product/add";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute Product product) {
+        productService.updateProduct(product);
+        return "redirect:/list";
     }
 }

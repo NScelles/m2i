@@ -24,8 +24,19 @@ public class ProductService {
         return products.values().stream().toList();
     }
 
+
     public Product getProduct(UUID id) {
         return products.get(id);
+    }
+
+    public Product addProduct(Product product) {
+        product.setId(UUID.randomUUID());
+        products.put(product.getId(), product);
+        return product;
+    }
+    public Product updateProduct(Product product) {
+        products.replace(product.getId(), product);
+        return product;
     }
 
     public List<Product> getProductsByCategory(List<Product> productList, String category) {

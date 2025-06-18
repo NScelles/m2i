@@ -9,18 +9,16 @@
 <body class="bs-body-color d-flex justify-content-center align-items-center flex-column card m-5">
     <p th:if="${products.isEmpty()}">There is no product</p>
     <div th:unless="${products.isEmpty()}">
-        <div>
-            <form th:method="get" th:action="@{/search}">
-                <label th:id="category" th:for="category">
-                    <input th:id="category" name="category" th:type="text" placeholder="Category">
-                </label>
-                <label th:id="priceMax" th:for="priceMax">
-                    <input th:id="priceMax" name="priceMax" th:min="0" th:max="1000" th:type="range" placeholder="Category">
-                    <span><p>Min 0 Max 1000</p></span>
-                </label>
-                <button class="btn btn-primary" th:type="submit">Search</button>
-            </form>
-        </div>
+        <form th:method="get" th:action="@{/search}">
+            <label th:id="category" th:for="category">
+                <input th:id="category" name="category" th:type="text" placeholder="Category">
+            </label>
+            <label th:id="priceMax" th:for="priceMax">
+                <input th:id="priceMax" name="priceMax" th:min="0" th:max="1000" th:type="range" placeholder="Category">
+                <span><p>Min 0 Max 1000</p></span>
+            </label>
+            <button class="btn btn-primary" th:type="submit">Search</button>
+        </form>
         <div>
             <h1>Product list</h1>
             <ul>
@@ -29,6 +27,7 @@
                 </li>
             </ul>
         </div>
+        <a class="btn btn-primary" th:href="@{/add}">Add Product</a>
     </div>
 </body>
 </html>
