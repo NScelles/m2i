@@ -40,17 +40,16 @@ public class ProductService {
     }
 
     public List<Product> getProductsByCategory(List<Product> productList, String category) {
-        if (category != null) {
+        if (category != null && !category.isEmpty()) {
           productList =  productList.stream().filter(p -> p.getCategory().equals(category)).toList();
         }
         return productList;
     }
 
     public List<Product> getProductsByPriceMax(List<Product> productList,String priceMax) {
-        if (priceMax != null) {
+        if (priceMax != null && !priceMax.isEmpty()) {
            productList = productList.stream().filter(p -> p.getPrice() < Double.parseDouble(priceMax)).toList();
         }
         return productList;
     }
-
 }
