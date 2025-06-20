@@ -1,7 +1,9 @@
-package org.example.kitchenexercise.services;
+package org.example.furnitureexercise.services;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,6 +26,9 @@ public class BaseService<T> {
     }
     public T addOrUpdate(T element){
         return repository.save(element);
+    }
+    public void delete(T element){
+        repository.delete(element);
     }
 
     public void delete(UUID id){

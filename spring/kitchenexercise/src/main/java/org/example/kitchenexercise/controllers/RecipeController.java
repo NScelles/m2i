@@ -2,8 +2,6 @@ package org.example.kitchenexercise.controllers;
 
 import org.example.kitchenexercise.models.Category;
 import org.example.kitchenexercise.models.Recipe;
-import org.example.kitchenexercise.services.BaseService;
-import org.example.kitchenexercise.services.category.LocalCategoryService;
 import org.example.kitchenexercise.services.recipe.BaseRecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

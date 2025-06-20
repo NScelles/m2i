@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>M2I High School</title>
+    <span th:replace="~{home :: css}"></span>
+</head>
+
+<header>
+    <span th:replace="~{home :: navbar}"></span>
+</header>
+
+<body>
+<div class="bs-body-color d-flex justify-content-center align-items-center flex-column card m-5">
+    <p th:if="${furnitures.isEmpty()}">There is no Furniture</p>
+    <div class="d-flex justify-content-center align-items-center flex-column m-3 w-100" th:unless="${furnitures.isEmpty()}">
+        <form th:method="get" th:action="@{/furniture/search}">
+            <label th:for="name">
+                <input name="name" th:type="text" placeholder="Name">
+            </label>
+            <button class="btn btn-primary" th:type="submit">Search</button>
+        </form>
+        <div class="w-100">
+            <h1><span th:text='${(mode.equals("list"))? "Furniture List" : "Search Result"}'/></h1>
+            <table class="table w-100">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Stock</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="furniture: ${furnitures}">
+                        <td><span th:text="${furniture.getName()}"/></td>
+                        <td><span th:text="${furniture.getDescription()}"/></td>
+                        <td><span th:text="${furniture.getPrice()}"/></td>
+                        <td><span th:text="${furniture.getStock()}"/></td>
+
+                        <td class="d-flex justify-content-around">
+                            <a th:href='@{/furniture/update/{id}(id=${furniture.getId()})}'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4287f5" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                </svg>
+                            </a>
+                            <form class="d-flex" th:object="${cardItem}" method="post" th:action="@{/card/add/{id}(id=${furniture.getId()})}">
+                                <input type="hidden" th:field="*{furniture.id}" th:value="${furniture.getId()}">
+                                <label th:for="quantity" >Quantity
+                                    <input type="number" th:name="quantity" th:max="${furniture.getStock()}" th:field="*{quantity}" />
+                                </label>
+                                <button class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4287f5" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+                                    </svg>
+                                </button>
+                            </form>
+                            <form method="get" th:action='@{/furniture/delete/{id}(id=${furniture.getId()})}'>
+                                <input class="delete" name="from" type="hidden">
+                                <button class="btn" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#dc3545" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="align-self-end m-2">
+            <a class="btn btn-primary" th:href="@{/furniture/add}">Add Furniture</a>
+            <a class="btn btn-outline-primary" th:href="@{/furniture/list}" th:if='${mode.equals("search")}'>Back to list</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    const deleteLink = document.getElementsByClassName("delete");
+    const currentUrl = window.location.href;
+    for (let deleteLinkElement of deleteLink) {
+        deleteLinkElement.setAttribute('value',currentUrl);
+    }
+</script>

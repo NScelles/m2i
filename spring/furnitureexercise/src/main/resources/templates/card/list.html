@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>M2I High School</title>
+    <span th:replace="~{home :: css}"></span>
+</head>
+
+<header>
+    <span th:replace="~{home :: navbar}"></span>
+</header>
+
+<body>
+<div class="bs-body-color d-flex justify-content-center align-items-center flex-column card m-5">
+    <p th:if="${cardItems.isEmpty()}">There is no item</p>
+    <div class="d-flex justify-content-center align-items-center flex-column m-3 w-100" th:unless="${cardItems.isEmpty()}">
+        <div class="w-100">
+            <h1><span th:text="Card"/></h1>
+            <table class="table w-100">
+                <thead>
+                <tr>
+                    <th scope="col">Furniture Name</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cardItem: ${cardItems}">
+                        <td><span th:text="${cardItem.furniture.getName()}"/></td>
+                        <td>
+                            <form class="d-flex" th:object="${cardItem}" method="post" th:action="@{/card/update/{id}(id=${cardItem.getId()})}">
+                                <input type="hidden" th:field="*{id}" th:value="${cardItem.getId()}">
+                                <label th:for="quantity" >Quantity
+                                    <input type="number" th:name="quantity" th:field="*{quantity}" th:value="${cardItem.quantity}" />
+                                </label>
+                                <input type="hidden" th:field="*{furniture.id}" th:value="${cardItem.furniture.getId()}">
+                                <button class="btn" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4287f5" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </td>
+                        <td class="d-flex justify-content-around">
+                            <form method="get" th:action='@{/card/delete/{id}(id=${cardItem.getId()})}'>
+                                <input class="delete" name="from" type="hidden">
+                                <button class="btn" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#dc3545" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="align-self-end m-2">
+            <a class="btn btn-outline-primary" th:href="@{/furniture/list}" >Back to furniture list</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    const deleteLink = document.getElementsByClassName("delete");
+    const currentUrl = window.location.href;
+    for (let deleteLinkElement of deleteLink) {
+        deleteLinkElement.setAttribute('value',currentUrl);
+    }
+</script>
