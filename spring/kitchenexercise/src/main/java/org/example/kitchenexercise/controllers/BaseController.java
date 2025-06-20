@@ -22,8 +22,6 @@ public abstract class BaseController<T>{
     @GetMapping("/update/{id}")
     public abstract String update(@PathVariable UUID id, Model model);
 
-    @PostMapping("/update")
-    public abstract String updateElement(@ModelAttribute T element, Model model);
 
     @PostMapping("/add")
     public abstract String addElement(@ModelAttribute T element);
