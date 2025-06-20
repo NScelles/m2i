@@ -14,14 +14,14 @@
 <div class="bs-body-color d-flex justify-content-center align-items-center flex-column card m-5">
     <p th:if="${recipes.isEmpty()}">There is no recipe</p>
     <div class="d-flex justify-content-center align-items-center flex-column m-3 w-100" th:unless="${recipes.isEmpty()}">
-        <form th:method="get" th:action="@{/search}">
+        <form th:method="get" th:action="@{/recipe/search}">
             <label th:for="name">
                 <input name="name" th:type="text" placeholder="Name">
             </label>
             <button class="btn btn-primary" th:type="submit">Search</button>
         </form>
         <div class="w-100">
-            <h1><span th:text='${(mode.equals("list"))? "Student List" : "Search Result"}'/></h1>
+            <h1><span th:text='${(mode.equals("list"))? "Recipe List" : "Search Result"}'/></h1>
             <table class="table w-100">
                 <thead>
                 <tr>

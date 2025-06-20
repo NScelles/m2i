@@ -29,4 +29,7 @@ public abstract class BaseController<T>{
     @GetMapping("/delete/{id}")
     public abstract String delete(@PathVariable UUID id, @RequestParam(value = "from") String destination, Model model);
 
+    @GetMapping("/search")
+    public abstract String search(@RequestParam(value = "name",required = false) String name,Model model);
+
 }

@@ -19,5 +19,5 @@ public abstract class BaseRecipeService extends BaseService<Recipe> {
 
     public abstract void deleteByCategory(UUID categoryId);
     public abstract List<Category> getCategories();
-
+    public abstract List<Recipe> findByName(String name);
 }

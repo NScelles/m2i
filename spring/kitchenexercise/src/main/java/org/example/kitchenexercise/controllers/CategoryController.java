@@ -1,6 +1,7 @@
 package org.example.kitchenexercise.controllers;
 
 import org.example.kitchenexercise.models.Category;
+import org.example.kitchenexercise.models.Recipe;
 import org.example.kitchenexercise.services.category.BaseCategoryService;
 import org.example.kitchenexercise.services.category.MySqlCategoryService;
 import org.example.kitchenexercise.services.recipe.BaseRecipeService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -69,5 +71,17 @@ public class CategoryController extends BaseController<Category> {
         if(destination != null && !destination.isEmpty())
             return "redirect:"+destination;
         return "redirect:/category/list";
+    }
+
+    @Override
+    @GetMapping("/search")
+    public String search(@RequestParam(value = "name",required = false) String name, Model model) {
+        model.addAttribute("mode","search");
+        List<Category> categoryList = service.get();
+        if(name != null && !name.isEmpty())
+            categoryList = service.findByName(name);
+        model.addAttribute("categories",categoryList);
+
+        return "/category/list";
     }
 }

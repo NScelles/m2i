@@ -14,7 +14,7 @@
 <div class="bs-body-color d-flex justify-content-center align-items-center flex-column card m-5">
     <p th:if="${categories.isEmpty()}">There is no Category</p>
     <div class="d-flex justify-content-center align-items-center flex-column m-3 w-100" th:unless="${categories.isEmpty()}">
-        <form th:method="get" th:action="@{/search}">
+        <form th:method="get" th:action="@{/category/search}">
             <label th:for="name">
                 <input name="name" th:type="text" placeholder="Name">
             </label>

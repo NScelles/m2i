@@ -13,7 +13,6 @@ public class LocalCategoryRepository  {
     Map<UUID, Category> categories = new HashMap<>();
 
     public LocalCategoryRepository() {
-
     }
 
     public List<Category> get() {

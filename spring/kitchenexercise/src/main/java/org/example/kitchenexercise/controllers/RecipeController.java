@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -72,5 +73,17 @@ public class RecipeController extends BaseController<Recipe> {
         if(destination != null && !destination.isEmpty())
             return "redirect:"+destination;
         return "redirect:/recipe/list";
+    }
+
+    @Override
+    @GetMapping("/search")
+    public String search(@RequestParam(value = "name",required = false) String name, Model model) {
+        model.addAttribute("mode", "search");
+
+        List<Recipe> recipeList = service.get();
+        if(name != null && !name.isEmpty())
+            recipeList = service.findByName(name);
+        model.addAttribute("recipes",recipeList);
+        return "recipe/list";
     }
 }
