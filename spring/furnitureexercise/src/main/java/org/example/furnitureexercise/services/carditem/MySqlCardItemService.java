@@ -24,6 +24,11 @@ public class MySqlCardItemService extends BaseCardItemService {
 
 
     @Override
+    public Furniture updateFurniture(Furniture furniture) {
+        return furnitureRepository.save(furniture);
+    }
+
+    @Override
     public Furniture findFurnitureById(UUID id) {
         return furnitureRepository.findById(id).orElse(null);
     }

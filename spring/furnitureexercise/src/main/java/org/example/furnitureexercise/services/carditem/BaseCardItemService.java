@@ -15,6 +15,8 @@ public abstract class BaseCardItemService extends BaseService<CardItem> {
         super(repository);
     }
 
+    public abstract Furniture updateFurniture(Furniture furniture);
+
     public abstract Furniture findFurnitureById(UUID id);
 
     public abstract void deleteAll();

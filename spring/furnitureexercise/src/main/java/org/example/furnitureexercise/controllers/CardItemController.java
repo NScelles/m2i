@@ -31,9 +31,10 @@ public class CardItemController {
 
     @PostMapping("/add/{id}")
     public String addElement(@PathVariable UUID id, @ModelAttribute("cardItem") CardItem element) {
-        element.setFurniture(service.findFurnitureById(id));
-        element.getFurniture().setStock(element.getFurniture().getStock() - element.getQuantity());
+        CardItem cardItem = CardItem.builder().furniture(service.findFurnitureById(id)).quantity(element.getQuantity()).build();
+        //cardItem.getFurniture().setStock(element.getFurniture().getStock() - element.getQuantity());
         System.out.println(element);
+        //service.updateFurniture(cardItem.getFurniture());
         service.addOrUpdate(element);
         return "redirect:/card/list";
     }
@@ -52,5 +53,7 @@ public class CardItemController {
         service.deleteAll();
         return "redirect:/card/list";
     }
+
+
 
 }

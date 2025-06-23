@@ -42,5 +42,9 @@ public class Furniture {
     @NotNull(message =  "Le stock ne peut être null")
     private int stock;
 
+    @OneToOne(mappedBy = "furniture")
+    @Version
+    @
+    private CardItem cardItem;
 
 }
