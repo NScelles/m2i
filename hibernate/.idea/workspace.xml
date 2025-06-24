@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43e96188-0211-461f-8dad-421ac1e46c78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/controllers/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/controllers/CardItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/controllers/FurnitureController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/controllers/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/models/CardItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/models/Furniture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/services/BaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/services/carditem/BaseCardItemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/services/furniture/BaseFurnitureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/resources/templates/card/details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/resources/templates/card/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/resources/templates/card/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/resources/templates/furniture/details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/resources/templates/furniture/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/resources/templates/furniture/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/furnitureexercise/FurnitureexerciseApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/furnitureexercise/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/repositories/category/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/repositories/recipe/RecipeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/category/MySqlCategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/recipe/MySqlRecipeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/controllers/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/controllers/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/controllers/RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/category/BaseCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/category/BaseCategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/recipe/BaseRecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/java/org/example/kitchenexercise/services/recipe/BaseRecipeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/kitchenexercise/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/furnitureexercise/src/main/java/org/example/furnitureexercise/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring boot/ToDoExercise/src/main/java/org/example/todoexercise/controllers/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring boot/ToDoExercise/src/main/java/org/example/todoexercise/controllers/TodoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +117,7 @@
       <workItem from="1749712380583" duration="39000" />
       <workItem from="1749712577663" duration="2363000" />
       <workItem from="1750426028425" duration="158000" />
+      <workItem from="1750674542946" duration="992000" />
     </task>
     <servers />
   </component>
