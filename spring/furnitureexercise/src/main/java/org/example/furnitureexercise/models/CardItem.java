@@ -22,9 +22,9 @@ public class CardItem {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
-    @Min(1)
-    @NotNull
+//
+//    @Min(1)
+//    @NotNull
     private int quantity;
 
     @OneToOne(cascade = CascadeType.ALL)

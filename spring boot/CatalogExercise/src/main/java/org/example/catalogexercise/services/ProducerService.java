@@ -18,12 +18,12 @@ public class ProducerService {
     private final ProducerRepository repository;
 
     @Autowired
-    public ProducerService(ProducerRepository ProducerRepository) {
-        this.repository = ProducerRepository;
+    public ProducerService(ProducerRepository producerRepository) {
+        this.repository = producerRepository;
     }
 
-    public ProducerResponseDto create (ProducerReceiveDto ProducerReceiveDto){
-        return repository.save(ProducerReceiveDto.dtoToEntity()).toDto();
+    public ProducerResponseDto create (ProducerReceiveDto producerReceiveDto){
+        return repository.save(producerReceiveDto.dtoToEntity()).toDto();
     }
 
     public ProducerResponseDto get(UUID id){
@@ -34,9 +34,9 @@ public class ProducerService {
         return repository.findAll().stream().map(Producer::toDto).toList();
     }
 
-    public ProducerResponseDto update(UUID id, ProducerReceiveDto ProducerReceiveDto){
+    public ProducerResponseDto update(UUID id, ProducerReceiveDto producerReceiveDto){
         Producer userFound = repository.findById(id).orElseThrow(NotFoundException::new);
-        Producer userGet = ProducerReceiveDto.dtoToEntity();
+        Producer userGet = producerReceiveDto.dtoToEntity();
         userFound.set(userGet);
         return repository.save(userFound).toDto();
     }

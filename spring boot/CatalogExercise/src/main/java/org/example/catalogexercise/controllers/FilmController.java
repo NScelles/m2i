@@ -35,10 +35,6 @@ public class FilmController {
 
     @PostMapping
     public ResponseEntity<FilmResponseDto> create (@Valid @RequestBody FilmReceiveDto filmReceiveDto){
-        filmReceiveDto.setProducer(service.getProducer(filmReceiveDto.getIdProducer()));
-        System.out.println((service.getProducer(filmReceiveDto.getIdProducer())));
-        System.out.println(filmReceiveDto.getIdProducer());
-        System.out.println(filmReceiveDto.getProducer());
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(filmReceiveDto));
     }
 

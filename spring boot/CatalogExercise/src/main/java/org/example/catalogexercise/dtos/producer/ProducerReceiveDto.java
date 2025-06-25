@@ -29,7 +29,6 @@ public class ProducerReceiveDto {
 
 
     public Producer dtoToEntity (){
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         return Producer.builder()
                 .firstName(getFirstName())
                 .lastName(getLastName())

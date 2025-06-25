@@ -32,13 +32,13 @@ public class ProducerController {
     }
 
     @PostMapping
-    public ResponseEntity<ProducerResponseDto> create (@Valid @RequestBody ProducerReceiveDto userReceiveDto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(userReceiveDto));
+    public ResponseEntity<ProducerResponseDto> create (@Valid @RequestBody ProducerReceiveDto producerReceiveDto){
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(producerReceiveDto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProducerResponseDto> update (@PathVariable UUID id , @RequestBody ProducerReceiveDto userReceiveDto){
-        return ResponseEntity.ok(service.update(id,userReceiveDto));
+    public ResponseEntity<ProducerResponseDto> update (@PathVariable UUID id , @RequestBody ProducerReceiveDto producerReceiveDto){
+        return ResponseEntity.ok(service.update(id,producerReceiveDto));
     }
 
     @DeleteMapping("/{id}")

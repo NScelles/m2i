@@ -19,12 +19,13 @@ public class FilmService {
     private final FilmRepository repository;
 
     @Autowired
-    public FilmService(FilmRepository FilmRepository) {
-        this.repository = FilmRepository;
+    public FilmService(FilmRepository filmRepository) {
+        this.repository = filmRepository;
     }
 
-    public FilmResponseDto create (FilmReceiveDto FilmReceiveDto){
-        return repository.save(FilmReceiveDto.dtoToEntity()).toDto();
+    public FilmResponseDto create (FilmReceiveDto filmReceiveDto){
+        filmReceiveDto.setProducer(getProducer(filmReceiveDto.getIdProducer()));
+        return repository.save(filmReceiveDto.dtoToEntity()).toDto();
     }
 
     public FilmResponseDto get(UUID id){
@@ -35,10 +36,9 @@ public class FilmService {
         return repository.findAll().stream().map(Film::toDto).toList();
     }
 
-    public FilmResponseDto update(UUID id, FilmReceiveDto FilmReceiveDto){
+    public FilmResponseDto update(UUID id, FilmReceiveDto filmReceiveDto){
         Film userFound = repository.findById(id).orElseThrow(NotFoundException::new);
-        Film userGet = FilmReceiveDto.dtoToEntity();
-        userFound.set(userGet);
+        userFound.set(filmReceiveDto.dtoToEntity());
         return repository.save(userFound).toDto();
     }
 

@@ -27,12 +27,12 @@
                     <tr th:each="cardItem: ${cardItems}">
                         <td><span th:text="${cardItem.furniture.getName()}"/></td>
                         <td>
-                            <form class="d-flex" th:object="${cardItem}" method="post" th:action="@{/card/update/{id}(id=${cardItem.getId()})}">
+                            <form class="d-flex" th:object="${cardItem}" method="post" th:action="@{/card/update/{idFurniture}(idFurniture=${cardItem.getId()})}">
                                 <input type="hidden" th:field="*{id}" th:value="${cardItem.getId()}">
                                 <label th:for="quantity" >Quantity
                                     <input type="number" th:name="quantity" th:field="*{quantity}" th:value="${cardItem.quantity}" />
                                 </label>
-                                <input type="hidden" th:field="*{furniture.id}" th:value="${cardItem.furniture.getId()}">
+
                                 <button class="btn" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4287f5" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
                                         <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
