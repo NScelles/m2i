@@ -64,4 +64,22 @@ Ce dépôt contient plusieurs dossiers correspondant aux projets réalisés tout
     - Demos
     - Exercice 1
     - TP Computer
+- Java EE / Jakarta
+    - 
+    -  Jakarta Demo
+    -  Exercice 1/2
+    -  Exercice 3 / 4
+    -  Exercice 5
+    -  Exercice 6  
+- Spring / Thymeleaf
+    -     
+    - Base
+    - Exercice Todo
+    - Exercice Produit
+    - Exercice Étudiant
+    - Exercice Meuble
+- Spring Boot / JDBC API
+    - 
+    - Exercice Todo (Base)
+    - Exerice Catalog
 
