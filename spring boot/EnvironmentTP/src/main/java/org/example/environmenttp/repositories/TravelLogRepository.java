@@ -11,4 +11,7 @@ import java.util.UUID;
 public interface TravelLogRepository extends JpaRepository<TravelLog, UUID> {
     @Query("SELECT t FROM TravelLog t INNER JOIN Observation o ON t.observation.id = o.id WHERE o.id = ?1")
     public List<TravelLog> findTravelLogsByObservation(UUID observationId);
+
+    @Query("SELECT t FROM TravelLog t INNER JOIN Observation o ON t.observation.id = o.id WHERE o.observerName = ?1")
+    public List<TravelLog> findTravelLogsByObserverName(String name);
 }

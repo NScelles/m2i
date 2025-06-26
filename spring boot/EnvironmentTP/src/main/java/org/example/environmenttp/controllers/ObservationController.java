@@ -5,6 +5,7 @@ import org.example.environmenttp.dtos.observation.ObservationReceiveDto;
 import org.example.environmenttp.dtos.observation.ObservationResponseDto;
 import org.example.environmenttp.dtos.travellog.TravelLogResponseDto;
 import org.example.environmenttp.services.ObservationService;
+import org.geojson.FeatureCollection;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -59,5 +60,10 @@ public class ObservationController {
     @GetMapping("by-specie/{specieId}")
     public ResponseEntity<List<ObservationResponseDto>> getBySpecie (@PathVariable UUID specieId){
         return ResponseEntity.ok(service.findBySpecie(specieId));
+    }
+
+    @GetMapping("geojson")
+    public ResponseEntity<FeatureCollection> getGeoJson (){
+        return ResponseEntity.ok(service.getGeoJson());
     }
 }

@@ -6,8 +6,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.environmenttp.dtos.observation.ObservationResponseDto;
+import org.geojson.Feature;
+import org.geojson.Point;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Entity
@@ -53,6 +57,18 @@ public class Observation {
                 .comment(getComment())
                 .build();
         return dto;
+    }
+
+    public Feature toFeature() {
+        Feature feature = new Feature();
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("observer", getObserverName());
+        properties.put("location", getLocation());
+        properties.put("comment", getComment());
+        properties.put("specie", getSpecie().getCommonName());
+        feature.setGeometry(new Point(getLongitude(), getLatitude()));
+        feature.setProperties(properties);
+        return feature;
     }
 }
 

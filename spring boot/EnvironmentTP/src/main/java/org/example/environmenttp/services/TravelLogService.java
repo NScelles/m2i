@@ -57,7 +57,6 @@ public class TravelLogService {
 
     public Map<String,Object> getStatsObservation(UUID observationId) {
         Map<String,Object> result = new HashMap<>();
-        System.out.println(repository.findTravelLogsByObservation(observationId).stream().map(TravelLog::toDto).toList());
         var travelLog = repository.findTravelLogsByObservation(observationId);
         result.put("totalDistanceKm",travelLog.stream().map(TravelLog::getDistanceKm).reduce(0.0, Double::sum));
         result.put("totalEmissionsKg",travelLog.stream().map(TravelLog::getEstimatedCo2Kg).reduce(0.0, Double::sum));
@@ -67,6 +66,10 @@ public class TravelLogService {
         ));
         result.put("byMode",byMode);
         return result;
+    }
+
+    public List<TravelLogResponseDto> findTravelLogsByObserverName(String observerName) {
+        return repository.findTravelLogsByObserverName(observerName).stream().map(TravelLog::toDto).toList();
     }
 
 

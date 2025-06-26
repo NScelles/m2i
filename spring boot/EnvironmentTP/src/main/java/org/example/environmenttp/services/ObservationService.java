@@ -6,6 +6,7 @@ import org.example.environmenttp.exeptions.NotFoundException;
 import org.example.environmenttp.models.Observation;
 import org.example.environmenttp.repositories.ObservationRepository;
 import org.example.environmenttp.repositories.SpecieRepository;
+import org.geojson.FeatureCollection;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -56,6 +57,13 @@ public class ObservationService {
 
     public List<ObservationResponseDto> findBySpecie(UUID id) {
         return repository.findObservationsBySpecie(id).stream().map(Observation::toDto).toList();
+    }
+
+    public FeatureCollection getGeoJson() {
+        var featureCollection = new FeatureCollection();
+        var observations = repository.findAll();
+        observations.stream().map(Observation::toFeature).forEach(featureCollection::add);
+        return featureCollection;
     }
 
     private Observation toEntity(ObservationReceiveDto receiveDto) {

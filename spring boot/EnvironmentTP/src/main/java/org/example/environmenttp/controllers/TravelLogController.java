@@ -58,4 +58,9 @@ public class TravelLogController {
     public ResponseEntity<Map<String,Object>> getStats (@PathVariable UUID idObservation){
         return ResponseEntity.ok(service.getStatsObservation(idObservation));
     }
+
+    @GetMapping("user/{name}")
+    public ResponseEntity<List<TravelLogResponseDto>> getUser (@PathVariable String name){
+        return ResponseEntity.ok(service.findTravelLogsByObserverName(name));
+    }
 }

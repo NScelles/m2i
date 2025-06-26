@@ -15,7 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TravelLog {
+public class TravelLog{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
