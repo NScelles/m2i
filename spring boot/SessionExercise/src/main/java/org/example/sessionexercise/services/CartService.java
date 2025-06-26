@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class CartService {
@@ -29,10 +28,9 @@ public class CartService {
     }
 
     public List<CartItemResponseDto> getCart() {
-        List<CartItemResponseDto> cartItems = new ArrayList<>();
+
         List<Product> products = productRepository.findProductsByIds(cart.stream().map(CartItem::getIdProduct).toList());
-        cartItems = cart.stream().map(cartItem -> cartItem.toDto(products.stream().filter(p -> p.getId().equals(cartItem.getIdProduct())).findFirst().get())).toList();
-        return cartItems;
+        return cart.stream().map(cartItem -> cartItem.toDto(products.stream().filter(p -> p.getId().equals(cartItem.getIdProduct())).findFirst().get())).toList();
     }
 
     public List<CartItem> addProduct(UUID id) {
