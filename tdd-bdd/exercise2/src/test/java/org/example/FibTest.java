@@ -38,11 +38,17 @@ public class FibTest
         //Act
         result = fib.getFibSeries();
         //Assert
-        System.out.println(result);
         Assertions.assertTrue(result.contains(3));
         Assertions.assertEquals(range, result.size());
         Assertions.assertFalse(result.contains(4));
         Assertions.assertEquals(awaitResult, result);
-        Assertions.assertEquals(awaitResult.stream().sorted().toList(), result);
+
+        var iteratorNext = result.iterator();
+        iteratorNext.next();
+        iteratorNext.remove();
+        while (iteratorNext.hasNext())
+            Assertions.assertTrue(result.iterator().next() <= iteratorNext.next());
+
+        //Assertions.assertEquals(awaitResult.stream().sorted().toList(), result);
     }
 }
