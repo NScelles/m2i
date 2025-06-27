@@ -25,12 +25,7 @@ public class TravelLogController {
 
     @GetMapping
     public ResponseEntity<Map<String,Object>> getAll (){
-        Map <String,Object> result = new HashMap<>();
-        var travelLogs = service.findAll();
-        result.put("travelLogs", travelLogs);
-        double totalEmissions = travelLogs.stream().map(TravelLogResponseDto::getEstimatedCo2Kg).reduce(0.0, Double::sum);
-        result.put("totalEmissionKg", totalEmissions);
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(service.findAllAndTotalEmission());
     }
 
     @GetMapping("/{id}")

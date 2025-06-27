@@ -55,6 +55,15 @@ public class TravelLogService {
         return repository.findAll().stream().map(TravelLog::toDto).toList();
     }
 
+    public Map <String,Object> findAllAndTotalEmission(){
+        Map <String,Object> result = new HashMap<>();
+        var travelLogs = findAll();
+        result.put("travelLogs", travelLogs);
+        double totalEmissions = travelLogs.stream().map(TravelLogResponseDto::getEstimatedCo2Kg).reduce(0.0, Double::sum);
+        result.put("totalEmissionKg", totalEmissions);
+        return result;
+    }
+
     public Map<String,Object> getStatsObservation(UUID observationId) {
         Map<String,Object> result = new HashMap<>();
         var travelLog = repository.findTravelLogsByObservation(observationId);
