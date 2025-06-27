@@ -1,13 +1,8 @@
 package org.example;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.params.Parameter;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FibTest
@@ -15,7 +10,7 @@ public class FibTest
     private Fib fib;
 
     @Test
-    public void whenGetFibSeries_1_Then_ListIntRange_1(){
+    public void whenGetFibSeries_1_Then_Result_IsNotEmpty(){
         //Arrange
         int range = 1;
         fib = new Fib(range);
@@ -25,6 +20,18 @@ public class FibTest
         result = fib.getFibSeries();
         //Assert
         Assertions.assertNotEquals(0, result.size());
+    }
+
+    @Test
+    public void whenGetFibSeries_1_Then_Result_IsEqualsList_0(){
+        //Arrange
+        int range = 1;
+        fib = new Fib(range);
+        List<Integer> result;
+        List<Integer> awaitResult = List.of(0);
+        //Act
+        result = fib.getFibSeries();
+        //Assert
         Assertions.assertEquals(awaitResult, result);
     }
 
