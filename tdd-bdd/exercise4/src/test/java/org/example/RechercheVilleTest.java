@@ -1,10 +1,9 @@
 package org.example;
 
 import org.example.exeptions.NotFoundExeption;
-import org.junit.Assert;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class RechercheVilleTest {
       String motInferior3Caractere = "d";
 
       //Act Assert
-      Assert.assertThrows(NotFoundExeption.class, () -> {rechercheVille.rechercher(motInferior3Caractere);});
+      Assertions.assertThrows(NotFoundExeption.class, () -> {rechercheVille.rechercher(motInferior3Caractere);});
    }
 
    @Test
@@ -64,7 +63,7 @@ public class RechercheVilleTest {
    public void whenRechercher_ape_thenBudapest(){
       //Arrange
       String motRechercher = "ape";
-      List<String> expected = List.of("Vancouver");
+      List<String> expected = List.of("Budapest");
       List<String> result;
 
       //Act
