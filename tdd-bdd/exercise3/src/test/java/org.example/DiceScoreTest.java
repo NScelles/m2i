@@ -1,8 +1,12 @@
 package org.example;
 
+import junit.framework.JUnit4TestAdapter;
+import junit.framework.JUnit4TestCaseFacade;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.Description;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -12,10 +16,15 @@ public class DiceScoreTest {
     private DiceScore diceScore;
     private Ide de = Mockito.mock(Ide.class);
 
+    @BeforeEach
+    public void setUp() {
+        diceScore = new DiceScore(de);
+    }
+
     @Test
     public void whenGetScore_SameDiceScore_ThenReturnDiceScoreMultiply2Plus10() {
         //Arrange
-        diceScore = new DiceScore(de);
+
         int sameDiceScore = 1;
         int awaitResult = sameDiceScore * 2 + 10;
         int result;
@@ -31,7 +40,6 @@ public class DiceScoreTest {
     @Test
     public void whenGetScore_DicesEquals6_ThenReturn30() {
         //Arrange
-        diceScore = new DiceScore(de);
         int dicesEquals6 = 6;
         int awaitResult = 30;
         int result;
@@ -47,7 +55,6 @@ public class DiceScoreTest {
     @Test
     public void whenGetScore_DefaultDiceScore_ThenReturnDiceHighestScoreOfBoth() {
         //Arrange
-        diceScore = new DiceScore(de);
         int scoreFirstDice = 6;
         int scoreSecondDice = 1;
         int awaitResult = Math.max(scoreFirstDice, scoreSecondDice);
