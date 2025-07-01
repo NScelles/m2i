@@ -21,16 +21,16 @@ public class Product {
         int factor = (type.equalsIgnoreCase("Milk"))? 2 : 1;
         if(name.equalsIgnoreCase("Brie vieilli"))
             quality++;
-            else{
-                if (sellin == 0)
-                    quality -= 2 * factor;
-                else
-                    quality -= factor;
+        else{
+            if (sellin == 0)
+                quality -= 2 * factor;
+            else
+                quality -= factor;
 
-                if (quality < 0)
-                    quality = 0;
-                else if (quality > 50)
-                    quality = 50;
+            if (quality < 0)
+                quality = 0;
+            else if (quality > 50)
+                quality = 50;
         }
         if (sellin > 0)
             sellin--;
