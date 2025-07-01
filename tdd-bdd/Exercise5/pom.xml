@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>exercise4</artifactId>
+    <artifactId>Exercise5</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -49,4 +49,5 @@
             <version>1.18.38</version>
         </dependency>
     </dependencies>
+
 </project>

@@ -41,7 +41,7 @@ public class RechercheVilleTest {
       result = rechercheVille.rechercher(motRechercher);
 
       //Assert
-      Assertions.assertEquals(result, expected);
+      Assertions.assertEquals(expected,result);
    }
 
    @Test

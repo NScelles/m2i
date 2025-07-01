@@ -1,12 +1,9 @@
 package org.example;
 
-import junit.framework.JUnit4TestAdapter;
-import junit.framework.JUnit4TestCaseFacade;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.Description;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
