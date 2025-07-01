@@ -12,5 +12,6 @@ Feature: Command Ordering
     Scenario: Add a Product for a Command
         Given Customer "Michel" who want to command for Someone
         When a command is make for Someone
-        Then a product is add in the command
-        And there is one product in the Command
+        And a product is add in the command
+        Then there is one product in the Command
+        And the command come from Customer "Michel"

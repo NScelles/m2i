@@ -22,9 +22,19 @@ public class CommandSteps {
         command.setTo("Tata");
     }
 
+    @And("a product is add in the command")
+    public void aProductIsAddInTheCommand(){
+        command.setProducts(List.of("ed'rfyhl"));
+    }
+
     @Then("there is no product in the Command")
     public void thereIsNoProductInTheCommand(){
         Assert.assertTrue(command.getProducts().isEmpty());
+    }
+
+    @Then("there is one product in the Command")
+    public void thereIsOneProductInTheCommand(){
+        Assert.assertEquals(1,command.getProducts().size());
     }
 
     @And("the command come from Customer {string}")
@@ -34,15 +44,6 @@ public class CommandSteps {
 
 
 
-    @Then("a product is add in the command")
-    public void aProductIsAddInTheCommand(){
-        command.setProducts(List.of("ed'rfyhl"));
-    }
-
-    @And("there is one product in the Command")
-    public void thereIsOneProductInTheCommand(){
-        Assert.assertEquals(1,command.getProducts().size());
-    }
 
 
 
