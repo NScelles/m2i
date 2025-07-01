@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,6 +18,32 @@ public class Product {
     private String type;
 
     public void update(){
-        throw new UnsupportedOperationException("Not supported yet.");
+        int factor = (type.equalsIgnoreCase("Milk"))? 2 : 1;
+        if(name.equalsIgnoreCase("Brie vieilli"))
+            quality++;
+            else{
+                if (sellin == 0)
+                    quality -= 2 * factor;
+                else
+                    quality -= factor;
+
+                if (quality < 0)
+                    quality = 0;
+                else if (quality > 50)
+                    quality = 50;
+        }
+        sellin--;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return sellin == product.sellin && quality == product.quality && Objects.equals(name, product.name) && Objects.equals(type, product.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, sellin, quality, type);
     }
 }
