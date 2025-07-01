@@ -32,7 +32,8 @@ public class Product {
                 else if (quality > 50)
                     quality = 50;
         }
-        sellin--;
+        if (sellin > 0)
+            sellin--;
     }
 
     @Override
