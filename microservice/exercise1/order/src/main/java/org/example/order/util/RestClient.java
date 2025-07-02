@@ -5,7 +5,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-public class RestClient<T> {
+public class RestClient<T,U> {
 
     private final RestTemplate template;
     private final HttpHeaders headers;
@@ -19,9 +19,9 @@ public class RestClient<T> {
         this.headers.setAccept(List.of(MediaType.APPLICATION_JSON));
     }
 
-    public T get(Class<T> responseType){
+    public T get(U id,Class<T> responseType){
         HttpEntity<String> requestEntity = new HttpEntity<>("",headers);
-        ResponseEntity<T> response = template.exchange(urlApi, HttpMethod.GET,requestEntity,responseType);
+        ResponseEntity<T> response = template.exchange(urlApi+id, HttpMethod.GET,requestEntity,responseType);
         if(response.hasBody()){
             return response.getBody();
         }
