@@ -22,5 +22,5 @@ Feature: User account creation
 Feature: User connection
 
     as a user i want to connect to my account to pass command
-    Scenario: 
+    Scenario:
 
