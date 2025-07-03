@@ -12,9 +12,9 @@ public class RestClient<T,U> {
     private final HttpHeaders headers;
     private final String urlApi;
 
-    public RestClient(String urlApi) {
+    public RestClient(String urlApi, RestTemplate template) {
         this.urlApi = urlApi;
-        this.template = new RestTemplate();
+        this.template = template;
         this.headers = new HttpHeaders();
         this.headers.setContentType(MediaType.APPLICATION_JSON);
         this.headers.setAccept(List.of(MediaType.APPLICATION_JSON));

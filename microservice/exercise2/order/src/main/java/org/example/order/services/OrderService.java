@@ -19,15 +19,22 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
+
 public class OrderService {
 
     private final RestTemplate restTemplate;
-    private final RestClient<Customer,UUID> customerRestClient = new RestClient<>("http://localhost:8082/customer/");
-    private final RestClient<Product,UUID> productRestClient = new RestClient<>("http://localhost:8081/product/");
+    private final RestClient<Customer,UUID> customerRestClient;
+    private final RestClient<Product,UUID> productRestClient;
 
     private final OrderRepository repository;
 
+    public OrderService(RestTemplate restTemplate, OrderRepository repository) {
+        this.restTemplate = restTemplate;
+        this.repository = repository;
+
+        customerRestClient =  new RestClient<>("http://CUSTOMER/customer/",this.restTemplate);
+        productRestClient =  new RestClient<>("http://PRODUCT/product/",this.restTemplate);
+    }
 
     public List<OrderResponseDto> getAllOrders() {
         return repository.findAll().stream().map(this::toOrderDto).toList();
