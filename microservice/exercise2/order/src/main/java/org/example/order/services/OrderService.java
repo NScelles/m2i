@@ -55,8 +55,8 @@ public class OrderService {
         return OrderResponseDto.builder()
                 .id(order.getId())
                 .description(order.getDescription())
-                .customer(customerRestClient.get(order.getId(),Customer.class))
-                .product(productRestClient.get(order.getId(),Product.class))
+                .customer(customerRestClient.get(order.getCustomer(),Customer.class))
+                .product(productRestClient.get(order.getProduct(),Product.class))
                 .build();
     }
 
