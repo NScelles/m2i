@@ -41,6 +41,18 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
 4. **Modification du contenu :**
    - À l'intérieur du container, ouvrez un fichier texte (par exemple, README.md) à l'aide d'un éditeur de texte disponible dans l'image Alpine.
    - Ajoutez une ligne de texte à votre choix et enregistrez le fichier.
+
+   ```bash
+   apk add nano
+   nano exerciseContainer.md
+   --
+   git config --global core.editor "nano"
+   git config --global user.email n.scelles974@gmail.com
+   -- Écriture du texte que tu es entrain de lire
+   git add .
+   git commit -a
+   git push
+   ```
    
 
 **infos**:
