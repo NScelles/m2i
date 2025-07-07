@@ -19,14 +19,29 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
    - Utilisez la commande Docker pour créer un container basé sur l'image Alpine.
    - Connectez-vous au shell du container nouvellement créé.
 
+   ```bash
+   docker search alpine
+   --
+   docker run -it -p 8080:80 --name curious-platon alpine
+   ```
+
 3. **Récupération d'un dépôt GitHub :**
 
    - À l'intérieur du container, utilisez la commande `git` pour cloner un dépôt public depuis GitHub (par exemple, https://github.com/votre-utilisateur/exemple-repo.git).
    - Allez dans le répertoire du dépôt cloné.
 
+   ```bash
+   apk add git
+   --
+   git clone https://github.com/NScelles/m2i.git
+   --
+   cd m2i
+   ```
+
 4. **Modification du contenu :**
    - À l'intérieur du container, ouvrez un fichier texte (par exemple, README.md) à l'aide d'un éditeur de texte disponible dans l'image Alpine.
    - Ajoutez une ligne de texte à votre choix et enregistrez le fichier.
+   
 
 **infos**:
 Alpine est une version de Linux qui présente des variations dans les commandes par rapport à Ubuntu.
