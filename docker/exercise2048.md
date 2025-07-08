@@ -226,6 +226,8 @@ nano /etc/nginx/conf.d/default.conf
 service nginx restart
 exit
 docker start nginx-web5
+
+http://10.125.11.70:8087/
 ```
 
 
