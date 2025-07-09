@@ -37,7 +37,7 @@ echo "<h1>Mon site web</h1>" > index.html
    * Il doit exposer un port (exemple accessible via `http://localhost:8080`),
 
    ```bash
-   docker -d -v site_data:/tmp -p 8079:80 -name web-nginx nginx
+   docker run -d -v site_data:/usr/share/nginx/html -p 8079:80 --name web-nginx nginx
    ```
 
 5. **Vérifie dans le navigateur** que la page s’affiche correctement.
@@ -56,7 +56,7 @@ docker rm web-nginx
    * Le volume doit être monté à l’emplacement `/usr/local/apache2/htdocs/`.
 
     ```bash
-   docker -d -v site_data:/tmp -p 8078:80 -name web-apache nginx
+   docker run -d -v site_data:/usr/local/apache2/htdocs/ -p 8078:80 --name web-apache httpd
    ```
 
 8. **Vérifie que le site s’affiche toujours** correctement via `http://localhost:8080` si port 8080 utilisé.
