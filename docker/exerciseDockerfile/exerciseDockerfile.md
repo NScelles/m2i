@@ -13,15 +13,13 @@ la commande à utiliser à la fin du dockerfile : CMD ["nginx","-g","daemon off;
 
 ```dockerfile
 FROM nginx
-WORKDIR /usr/share/nginx/html/
-RUN apt update && apt install git -y
-RUN cd .. && git clone https://github.com/withaarzoo/3D-Rotate-Tube.git
-RUN mv ./3D-Rotate-Tube/* html
+WORKDIR /usr/share/nginx/html
+RUN apt update && apt install git -y && rm * && git clone https://github.com/withaarzoo/3D-Rotate-Tube.git ../html
 EXPOSE 80
 CMD ["nginx", "-g","daemon off;"]
 ```
 
 ```bash
-docker build -t exercise_six:1.2 .
-docker run -d -p 8008:80 exercise_six:1.2 
+docker build -t exercise_six:1.7 .
+docker run -d -p 8080:80 exercise_six:1.7
 ```
