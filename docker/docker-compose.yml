@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql
+    restart: always
+    container_name: my_db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - phpmyadmin_connect_volume:/tmp
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_PORT=3306
+
+
+volumes:
+  phpmyadmin_connect_volume:
