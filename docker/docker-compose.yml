@@ -6,7 +6,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
     volumes:
-      - phpmyadmin_connect_volume:/tmp
+      - phpmyadmin_connect_volume:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin
     restart: always
