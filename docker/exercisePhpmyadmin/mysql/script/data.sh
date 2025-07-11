@@ -1,0 +1,1 @@
+mysql -hmysql -uappuser -papppass myapp < /scripts/init_script.sql

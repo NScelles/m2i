@@ -6,7 +6,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
     volumes:
-      - phpmyadmin_connect_volume:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+      - phpmyadmin_mysql_volume:/var/lib/mysql  
   phpmyadmin:
     image: phpmyadmin
     restart: always
@@ -14,9 +15,12 @@ services:
     ports:
       - 8080:80
     environment:
-      - PMA_ARBITRARY=1
       - PMA_HOST=my_db:3306
-
+    volumes:
+      - ./mysql/script:/scripts
+    depends_on:
+      - db
+    #entrypoint: ["/bin/bash", "-c", "/scripts/data.sh"]
 
 volumes:
-  phpmyadmin_connect_volume:
+  phpmyadmin_mysql_volume:
