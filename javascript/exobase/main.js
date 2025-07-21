@@ -1,5 +1,5 @@
 // Q.1
-const playerScores=[0,25,50,100,75];
+const playerScores=[78, 95, 48, 63, 85];
 
 //Q.2
 
@@ -19,13 +19,8 @@ function moyenne(scores){
     // scores.forEach(score => {
     //     som+=score;
     // });
-    for(let i=0;i<scores.length;i++){
-
+    for(let i=0;i<scores.length;i++)
         som = som + scores[i];
-    }
-        
-    console.log(scores.length);
-    
     console.log("Score moyen : " + (som/scores.length));
 }
 
@@ -55,4 +50,27 @@ moyenne(playerScores);
 console.log("Meilleur score : " + meilleurScore(playerScores));
 showMention(playerScores);
 
+//Bonus
+
+function nombreMentions(scores){
+    let result = {
+        "Insuffisant":0,
+        "Passable":0,
+        "Bien":0,
+        "Très bien":0,
+        "Excellent":0
+    };
+    scores.forEach(score=>{
+        switch(mention(score)){
+            case "Insuffisant":result["Insuffisant"]++; break;
+            case "Passable":result["Passable"]++; break;
+            case "Bien":result["Bien"]++; break;
+            case "Très bien":result["Très bien"]++; break;
+            case "Excellent":result["Excellent"]++; break;
+        }
+    });
+    return result; 
+}
+
+console.log(nombreMentions(playerScores));
     
