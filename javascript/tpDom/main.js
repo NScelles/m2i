@@ -1,3 +1,9 @@
+var user = {
+    "pseudo":"",
+    "description":"",
+    "image":""
+};
+
 //Q.5
 var formValid=[false,false,false];
 
@@ -19,7 +25,7 @@ checker.addEventListener("change",()=>{
 // Q.2 Description Dynamique
 const descriptions=[
     "C'est le maitre de l'air !!", 
-    "C'est le maitre de quoi ??", 
+    "C'est qui lui ??", 
     "Hello, I'm under the Water Please Help Me !!"
 ];
 const descriptionButton = document.getElementById("desciptionButton");
@@ -72,24 +78,45 @@ avatars.forEach((avatar)=>{
     });
 });
 
-
 //Q.6
 
 const nextButton = document.getElementById("next");
 nextButton.addEventListener("click",()=>{
-    const form = document.querySelector("form");
-    form.hidden=true;
-    
-    const card = document.querySelector("#card");
-    card.hidden=false
-
-    document.getElementById("avatar").src = document.querySelector("#selected>label>img").src
-    document.getElementById("desciption").innerText = document.querySelector("textarea").value
-    document.getElementById("pseudoCard").textContent = document.getElementById("pseudo").value
+    user["pseudo"] = document.getElementById("pseudo").value;
+    user["description"] = document.querySelector("textarea").value;
+    user["image"] = document.querySelector("#selected>label>img").src;
+    localStorage.setItem("user",JSON.stringify(user));
+    showProfile();
 });
 
 const reload = document.getElementById("reload");
 reload.addEventListener("click",()=>{
+    localStorage.clear();
+    user = {
+        "pseudo":"",
+        "description":"",
+        "image":""
+    };
     location.reload();
 })
+
+
+
+// LocalStorage
+
+function showProfile(){ 
+    let user = JSON.parse(localStorage.getItem("user"));
+    if(user["pseudo"]!=""){
+        const form = document.querySelector("form");
+        form.hidden=true;
+        const card = document.querySelector("#card");
+        card.hidden=false
+        
+        document.getElementById("avatar").src = user["image"];
+        document.getElementById("desciption").innerText = user["description"];
+        document.getElementById("pseudoCard").textContent = user["pseudo"];
+    }
+}
+
+window.addEventListener("DOMContentLoaded", showProfile());
 
