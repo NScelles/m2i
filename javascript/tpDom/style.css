@@ -3,7 +3,20 @@ body{
     height: 97vh;
     width: 97vw;
     padding: 10px;
+    font-family:'Brush Script MT', 'Brush Script Std', 'cursive';
 }
+
+button{
+    border: 65px dashed #50ff6d;
+    border-radius: 200px;
+}
+
+textarea{
+    font-size: 3vh;
+    font-family:'Brush Script MT', 'Brush Script Std', 'cursive';
+}
+
+
 
 h1{
     margin: 0;

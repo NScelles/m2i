@@ -26,9 +26,25 @@ function isEnable(){
     });
 }
 
+function setTheme(){
+    if(localStorage.getItem("theme")=="dark") {
+        document.body.classList.add("dark");
+        checker.checked=true;
+    } else {
+        document.body.classList.remove("dark");
+        checker.checked=false;
+    }
+}
+
 checker.addEventListener("change",()=>{
-    (checker.checked) ? document.body.classList.add("dark") : document.body.classList.remove("dark");
+    (checker.checked) ? localStorage.setItem("theme","dark") : localStorage.setItem("theme","light");
+    setTheme();
 });
+
+window.addEventListener("DOMContentLoaded",()=>{
+    setTheme();
+})
+
 
 // Q.2 Description Dynamique
 
