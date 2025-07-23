@@ -3,9 +3,19 @@ var user = {
     "description":"",
     "image":""
 };
-
-//Q.5
 var formValid=[false,false,false];
+const checker = document.querySelector('#isDark');
+const descriptions=[
+    "C'est le maitre de l'air !!", 
+    "C'est qui lui ??", 
+    "Hello, I'm under the Water Please Help Me !!"
+];
+const descriptionButton = document.getElementById("desciptionButton");
+const pseudo = document.getElementById("pseudo");
+const avatars = document.querySelectorAll('input[type="radio"]');
+const divAvatar = document.querySelectorAll(".avatar");
+const nextButton = document.getElementById("next");
+const reload = document.getElementById("reload");
 
 function isEnable(){
     const nextButton = document.getElementById("next");
@@ -16,19 +26,12 @@ function isEnable(){
     });
 }
 
-// Q.1 Dark Mode
-const checker = document.querySelector('#isDark');
 checker.addEventListener("change",()=>{
     (checker.checked) ? document.body.classList.add("dark") : document.body.classList.remove("dark");
 });
 
 // Q.2 Description Dynamique
-const descriptions=[
-    "C'est le maitre de l'air !!", 
-    "C'est qui lui ??", 
-    "Hello, I'm under the Water Please Help Me !!"
-];
-const descriptionButton = document.getElementById("desciptionButton");
+
 function changeDescription(textes){
     let description = document.getElementById("description");
     let oldDescription = description.value;
@@ -39,13 +42,12 @@ function changeDescription(textes){
     isEnable();
 }
 
-changeDescription(descriptions);
+window.addEventListener("DOMContentLoaded", changeDescription(descriptions));
 descriptionButton.addEventListener("click", () => {
     changeDescription(descriptions);
 });
 
 //Q.3 
-const pseudo = document.getElementById("pseudo");
 pseudo.addEventListener("input", () => {
     let pseudo2 = document.getElementById("pseudo");
     let validity = document.getElementById("validity");
@@ -63,10 +65,6 @@ pseudo.addEventListener("input", () => {
 
 // Q.4 
 
-const avatars = document.querySelectorAll('input[type="radio"]');
-const divAvatar = document.querySelectorAll(".avatar");
-
-
 avatars.forEach((avatar)=>{
     avatar.addEventListener("input",()=>{
         formValid[2]=true;
@@ -80,7 +78,6 @@ avatars.forEach((avatar)=>{
 
 //Q.6
 
-const nextButton = document.getElementById("next");
 nextButton.addEventListener("click",()=>{
     user["pseudo"] = document.getElementById("pseudo").value;
     user["description"] = document.querySelector("textarea").value;
@@ -89,7 +86,6 @@ nextButton.addEventListener("click",()=>{
     showProfile();
 });
 
-const reload = document.getElementById("reload");
 reload.addEventListener("click",()=>{
     localStorage.clear();
     user = {
@@ -99,8 +95,6 @@ reload.addEventListener("click",()=>{
     };
     location.reload();
 })
-
-
 
 // LocalStorage
 
