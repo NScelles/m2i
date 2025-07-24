@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+form{
+    border: 4px inset rgba(0,0,0,0.47);
+    border-radius: 12px;  
+
+    width: 50vw; 
+    min-height: 25vh;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+form>div, form>button{
+    display: flex;
+    justify-content: center;
+}
+
+#addAnimal{
+    width: 25%;
+}
+
+section#animalAction{
+    display: flex;
+    justify-content: center;
+}
+
+section#zoo{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
