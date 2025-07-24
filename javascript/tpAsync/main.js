@@ -25,7 +25,7 @@ async function animerProgress(id, duree){
 document.getElementById("missionButton").addEventListener("click", async ()=>{
     sectionMsg.innerHTML=``;
     let msg;
-    try{
+    try{ 
         sectionPreparation.hidden=false;
         await attendre(500);
         await animerProgress("preparationBar",2000);
@@ -33,7 +33,7 @@ document.getElementById("missionButton").addEventListener("click", async ()=>{
         `<p><strong> Préparation Terminé </stong></p>`;
         await attendre(2000);
         sectionPreparation.querySelector("input").hidden=true;
-
+ 
         sectionExpedition.hidden=false;
         await animerProgress("expeditionBar",1500);
         document.querySelector("section#expedition>.status").innerHTML=
