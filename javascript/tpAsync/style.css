@@ -1,0 +1,4 @@
+input[type="range"]{
+    pointer-events: none;
+    width: 50vw;
+}

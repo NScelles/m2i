@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="missionButton">Lancer la mission</button>
+    <section id="preparation" hidden>
+        <h2 class="status">Préparation de votre commande</h2>
+        <input min="0" value="0" max="100" type="range" id="preparationBar">
+    </section>
+    <section id="expedition" hidden>
+        <h2 class="status"> Éxpédition de votre commande</h2>
+        <input min="0" value="0" max="100" type="range" id="expeditionBar">
+    </section>
+    <section id="livraison" hidden>
+        <h2 class="status">Livraion en cours</h2>
+        <input min="0" value="0" max="100" type="range" id="livraisonBar">
+    </section>
+    <section id="msg"></section>
+</body>
+<script type="module" src="main.js"></script>
+</html>
