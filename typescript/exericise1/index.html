@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <label for="title">Title</label>
+            <input class="book" name="title" id="title" type="text">
+        </div>
+        <div>
+            <label for="author">Author</label>
+            <select class="book" name="author" id="author">
+
+            </select>
+        </div>
+        <div>
+            <label for="pages">How many pages ?</label>
+            <input class="book" name="pages" id="pages" type="number">
+        </div>
+
+        <button id="register" type="button">Register</button>
+    </form>
+    <section id="filter">
+        <label for="availableFilter">Display Available</label>
+        <input type="checkbox" name="availableFilter" id="onlyAvailable">
+    </section>
+    <section id="library">
+
+    </section>
+</body>
+<script type="module" src="./js/main.js"></script>
+
+</html>
