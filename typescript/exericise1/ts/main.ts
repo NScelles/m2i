@@ -99,7 +99,7 @@ function displaylibrary(theLibrary: Library) {
         let setAvailableButton = document.createElement("button");
 
         removeButton.textContent = "Remove";
-        setAvailableButton.textContent = `${book.isAvailable ? "Set Available" : "Set Unavailable"}`
+        setAvailableButton.textContent = `${book.isAvailable ? "Set Unavailable" : "Set Available"}`
 
         setAvailableButton.addEventListener("click", () => {
             toggleAvailability(book);
