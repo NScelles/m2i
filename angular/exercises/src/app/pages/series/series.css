@@ -1,0 +1,21 @@
+li {
+    display: flex;
+    justify-content: space-around;
+}
+
+li>button:hover {
+    color: rgb(26, 100, 211);
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-content: space-around;
+    height: 50vh;
+    width: 100vw;
+}
+
+ul>p {
+    text-align: center;
+}

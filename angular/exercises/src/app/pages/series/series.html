@@ -1,0 +1,10 @@
+<ul>
+    @for (serie of series; track serie; let i = $index){
+    <li>
+        <p> {{ i + 1 }} - {{ serie }}</p>
+        <button (click)="delete(serie)">Delete</button>
+    </li>
+    } @empty {
+    <p class="empty">The list is empty</p>
+    }
+</ul>
