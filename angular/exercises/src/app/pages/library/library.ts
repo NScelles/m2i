@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Book } from '../../models/book';
 import { ShowReadingStatusPipe } from '../../utils/show-reading-status-pipe';
+import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-library',
-  imports: [ShowReadingStatusPipe],
+  imports: [ShowReadingStatusPipe, FormsModule],
   templateUrl: './library.html',
   styleUrl: './library.css'
 })
@@ -37,8 +38,28 @@ export class Library {
     }
   ];
 
+  book: Book = {
+    title: "",
+    author: "",
+    isRead: false
+  };
+
+  isSubmitted: boolean = false;
+
   toggleRead(book: Book) {
     book.isRead = !book.isRead;
   }
 
+  /// Form Part
+  addToList() {
+    this.isSubmitted = true;
+    if (!this.formHasError) {
+      console.log(this.book);
+      this.books.push(this.book);
+    }
+  }
+
+  get formHasError() {
+    return false;
+  }
 }

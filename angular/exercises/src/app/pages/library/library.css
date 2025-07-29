@@ -21,7 +21,8 @@ ul {
     width: 100vw;
 }
 
-.status>button {
+.status>button,
+form>button {
     border: solid #2677f1 3px;
     border-radius: 10px;
     width: 100px;
@@ -31,6 +32,49 @@ ul {
     font-size: 3vh;
 }
 
-.status>button:hover {
+.status>button:hover,
+form>button:hover {
     color: rgb(26, 100, 211);
+}
+
+#form {
+    width: 100vw;
+    height: 25vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+
+    text-align: center;
+}
+
+form {
+    height: 75%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+form>div {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+form>div>input {
+    border: solid 1px #1d1d1d;
+    border-radius: 15px;
+    width: 75vw;
+}
+
+form>button {
+    align-self: center;
+}
+
+#form>h2,
+#form>h3 {
+    font-size: 3vw;
 }

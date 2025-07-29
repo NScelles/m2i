@@ -1,5 +1,22 @@
 nav {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0 20px;
+    background-color: #2677f1;
+    margin-bottom: 50px;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.829);
+    font-size: larger;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: aqua;
+    border-radius: 10px;
 }

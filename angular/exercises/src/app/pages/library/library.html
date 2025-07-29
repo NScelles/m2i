@@ -1,9 +1,24 @@
-<main>
+<section id="form">
+    <h2> Add a Book </h2>
+    <h3>Form:</h3>
+    <form><!--(ngSubmit)="addToList()"-->
+        <div>
+
+            <label for="title">Title</label>
+            <input name="title" type="text" [(ngModel)]="book.title">
+        </div>
+        <div>
+            <label for="author">Author</label>
+            <input name="author" type="text" [(ngModel)]="book.author">
+        </div>
+        <button (click)="addToList()" type="button">Add to List</button>
+    </form>
+</section>
+<section id="list">
     <ul>
         @for (book of books;track book; let i = $index){
         <li>
             <h2> {{book.title}} - {{book.author}} </h2>
-
             <div class="status">
                 <p> {{book.isRead | showReadingStatus}} </p>
                 <button (click)="toggleRead(book)">{{book.isRead ? "Read" : "Not Read"}}</button>
@@ -13,4 +28,4 @@
         <p class="empty">The list is empty</p>
         }
     </ul>
-</main>
+</section>
