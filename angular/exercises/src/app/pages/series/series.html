@@ -1,8 +1,13 @@
+<div class="sortbyname">
+    <h2>Sort by name</h2>
+    <button (click)="sortAlphabetics('asc')">▲</button>
+    <button (click)="sortAlphabetics('desc')">▼</button>
+</div>
 <ul>
-    @for (serie of series; track serie; let i = $index){
+    @for (serie of series | sortbyname : sortbyname; track serie; let i = $index){
     <li>
         <p> {{ i + 1 }} - {{ serie }}</p>
-        <button (click)="delete(serie)">Delete</button>
+        <button class="delete" (click)="delete(serie)">Delete</button>
     </li>
     } @empty {
     <p class="empty">The list is empty</p>

@@ -3,7 +3,8 @@ li {
     justify-content: space-around;
 }
 
-li>button:hover {
+li>button:hover,
+.sortbyname>button:hover {
     color: rgb(26, 100, 211);
 }
 
@@ -18,4 +19,23 @@ ul {
 
 ul>p {
     text-align: center;
+}
+
+.delete {
+    border: solid 3px #ec2929;
+    background-color: #ec2929;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.sortbyname {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sortbyname>button {
+    border: solid 3px #2677f1;
+    background-color: #2677f1;
+    border-radius: 10px;
+    padding: 5px;
 }
