@@ -1,0 +1,16 @@
+<main>
+    <ul>
+        @for (book of books;track book; let i = $index){
+        <li>
+            <h2> {{book.title}} - {{book.author}} </h2>
+
+            <div class="status">
+                <p> {{book.isRead | showReadingStatus}} </p>
+                <button (click)="toggleRead(book)">{{book.isRead ? "Read" : "Not Read"}}</button>
+            </div>
+        </li>
+        } @empty {
+        <p class="empty">The list is empty</p>
+        }
+    </ul>
+</main>

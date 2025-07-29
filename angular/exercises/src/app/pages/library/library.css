@@ -1,0 +1,36 @@
+.empty {
+    text-align: center;
+}
+
+.status {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-content: space-around;
+    height: 50vh;
+    width: 100vw;
+}
+
+.status>button {
+    border: solid #2677f1 3px;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.status>p {
+    font-size: 3vh;
+}
+
+.status>button:hover {
+    color: rgb(26, 100, 211);
+}
