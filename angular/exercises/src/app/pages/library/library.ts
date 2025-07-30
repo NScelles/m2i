@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Book } from '../../models/book';
 import { ShowReadingStatusPipe } from '../../utils/show-reading-status-pipe';
 import { FormsModule } from '@angular/forms'
+import { title } from 'process';
 
 @Component({
   selector: 'app-library',
@@ -55,7 +56,14 @@ export class Library {
     this.isSubmitted = true;
     if (!this.formHasError) {
       console.log(this.book);
-      this.books.push(this.book);
+      this.books.push({
+        title: this.book.title,
+        author: this.book.author,
+        isRead: this.book.isRead
+      });
+      this.book.title = "";
+      this.book.author = "";
+      this.book.isRead = false;
     }
   }
 
