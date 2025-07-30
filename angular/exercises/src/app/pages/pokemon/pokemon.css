@@ -1,0 +1,51 @@
+#form {
+    width: 100vw;
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+
+    text-align: center;
+}
+
+form {
+    height: 75%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+form div {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+input {
+    border: solid 1px #1d1d1d;
+    border-radius: 15px;
+    width: 75vw;
+}
+
+form>button {
+    align-self: center;
+}
+
+#form>h2,
+#form>h3 {
+    font-size: 3vw;
+}
+
+button:hover {
+    color: rgb(26, 100, 211);
+}
+
+button {
+    border: solid #2677f1 3px;
+    border-radius: 10px;
+    width: 100px;
+}

@@ -1,0 +1,63 @@
+<section id="form">
+    <h2>Add a Pokemon</h2>
+    <form [formGroup]="pokemon_form" (ngSubmit)="savePokemon()">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" name="name">
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <input type="text" formControlName="description" name="description">
+        </div>
+        <fieldset formArrayName="types">
+            <legend>Types</legend>
+            <button (click)="addType()">Add a type</button>
+            @for(type of types.controls;track type;let i = $index){
+            <div>
+                <span>
+                    <label [for]="'type'+$index">Type {{$index + 1}} :</label>
+                    <select [name]="'type'+$index" [formControlName]="$index">
+                        @for (ptype of ptypes;track ptype; let i = $index){
+                        <option [value]="ptype">{{ptype}}</option>
+                        }
+                    </select>
+                </span>
+                <button (click)="deleteType($index)">Delete</button>
+            </div>
+            }
+        </fieldset>
+
+        <fieldset formArrayName="moves">
+            <legend>Move Set</legend>
+            <button (click)="addMove()">Add a move</button>
+            @for(move of moves.controls;track move;let i = $index){
+            <span [formGroupName]="$index">
+                <div>
+                    <label [for]="'name'+$index">Name</label>
+                    <input type="text" [name]="'name'+$index" formControlName="name">
+                </div>
+                <div>
+                    <label [for]="'description'+$index">Description</label>
+                    <input type="text" [name]="'description'+$index" formControlName="description">
+                </div>
+                <div>
+                    <label [for]="'damage'+$index">Damage</label>
+                    <input type="number" [name]="'damage'+$index" formControlName="damage">
+                </div>
+                <div>
+                    <label [for]="'type'">Type</label>
+                    <select [name]="'type'" formControlName="type">
+                        @for (ptype of ptypes;track ptype; let j = $index){
+                        <option [value]="ptype">{{ptype}}</option>
+                        }
+                    </select>
+                </div>
+                <button (click)="deleteMove($index)">Delete</button>
+            </span>
+            }
+        </fieldset>
+
+        <button type="submit">Add </button>
+    </form>
+</section>
+<section id="list"></section>

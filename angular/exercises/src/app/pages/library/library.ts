@@ -57,14 +57,15 @@ export class Library {
     if (!this.formHasError) {
       console.log(this.book);
       this.books.push({
-        title: this.book.title,
-        author: this.book.author,
-        isRead: this.book.isRead
+        ...this.book
       });
-      this.book.title = "";
-      this.book.author = "";
-      this.book.isRead = false;
+      this.resetBook();
     }
+  }
+
+  private resetBook() {
+    this.book.title = "";
+    this.book.author = "";
   }
 
   get formHasError() {
