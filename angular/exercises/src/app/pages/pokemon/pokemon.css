@@ -49,3 +49,14 @@ button {
     border-radius: 10px;
     width: 100px;
 }
+
+#list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+app-pokemon-card {
+    width: 20vw;
+}

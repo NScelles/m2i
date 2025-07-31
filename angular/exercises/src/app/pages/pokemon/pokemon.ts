@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { PTypes } from '../../models/pokemonType';
 import { FormArray, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PokemonData } from '../../models/pokemonData';
+import { PokemonCard } from '../../components/pokemon-card/pokemon-card';
 
 @Component({
   selector: 'app-pokemon',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, PokemonCard],
   templateUrl: './pokemon.html',
   styleUrl: './pokemon.css'
 })
 
 export class Pokemon {
   ptypes: PTypes[] = Object.values(PTypes);
+  pokemons: PokemonData[] = [];
 
   pokemon_form: FormGroup = new FormGroup({
+    id: new FormControl(this.pokemons.length),
     name: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
     types: new FormArray([
@@ -68,8 +72,15 @@ export class Pokemon {
   savePokemon(): void {
     if (this.pokemon_form.valid) {
       console.log("Pokemon:", this.pokemon_form.value);
+      this.pokemons.push(this.pokemon_form.value);
+      this.pokemons[this.pokemons.length - 1].id = this.pokemons.length - 1;
+      console.log(this.pokemons);
       this.pokemon_form.reset();
     }
+  }
+
+  deletePokemon(id: number) {
+    this.pokemons = this.pokemons.filter(pokemon => pokemon.id != id);
   }
 
 }

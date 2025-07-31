@@ -1,0 +1,8 @@
+button:hover {
+    color: whitesmoke;
+}
+
+button {
+    position: relative;
+    right: -55%;
+}
