@@ -6,7 +6,7 @@
     <section id="list">
         <div>
             <label for="">Search :</label>
-            <input type="text" placeholder="ID or Name">
+            <input (change)="search()" [formControl]="idForm" type="number" placeholder="ID">
         </div>
         @for(pokemon of pokemons; track pokemon; let i = $index){
         <div class="{{(choosedPokemon.id==i)? 'choosed' : ''}}">
