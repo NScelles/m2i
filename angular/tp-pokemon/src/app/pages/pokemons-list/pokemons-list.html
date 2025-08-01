@@ -1,1 +1,22 @@
-<p>pokemons-list works!</p>
+<div class="main">
+    <section id="preAndNext">
+        <button (click)="previous(choosedPokemon.id!)">Previous</button>
+        <button (click)="next(choosedPokemon.id!)">Next</button>
+    </section>
+    <section id="list">
+        <div>
+            <label for="">Search :</label>
+            <input type="text" placeholder="ID or Name">
+        </div>
+        @for(pokemon of pokemons; track pokemon; let i = $index){
+        <div class="{{(choosedPokemon.id==i)? 'choosed' : ''}}">
+            <button (click)="choosePokemon(pokemon,i);">{{
+                (i+1) + " " +
+                pokemon.name}}</button>
+        </div>
+        }
+    </section>
+    <section id="detail">
+        <app-poke-card-list [pokeUrl]="choosedPokemon.url" />
+    </section>
+</div>

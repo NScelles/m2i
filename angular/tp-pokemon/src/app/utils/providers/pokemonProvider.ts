@@ -1,6 +1,5 @@
 import { error } from "console";
-import { DtoToPokemon } from "../../dtos/dtoToPokemon";
-import { Pokemon } from "../../models/pokemonData";
+import { Pokemon } from "../../models/pokemon";
 import { ApiPokemon } from "../services/api-pokemon";
 
 export class PokemonProvider {

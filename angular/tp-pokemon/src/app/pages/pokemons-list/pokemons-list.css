@@ -1,0 +1,39 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 80vh;
+    overflow: hidden;
+}
+
+section#preAndNext {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 10px;
+}
+
+section#list {
+    height: 100%;
+    text-align: center;
+    overflow: scroll;
+    width: 25vw;
+    scrollbar-width: none;
+}
+
+section#detail {
+    width: 50vw;
+}
+
+app-poke-card-list {
+    position: sticky;
+    top: 20px;
+}
+
+.choosed {
+    background-color: aqua;
+}
+
+button:hover {
+    background-color: aqua;
+}

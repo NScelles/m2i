@@ -1,25 +1,60 @@
-import { Component, OnInit } from '@angular/core';
-import { on } from 'node:events';
+import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ApiPokemon } from '../../utils/services/api-pokemon';
-import { DtoToPokemon } from '../../dtos/dtoToPokemon';
-import { Pokemon } from '../../models/pokemonData';
+import { PUrl } from '../../models/pokemonUrl';
+import { PokeCardList } from '../../components/poke-card-list/poke-card-list';
+import { Pokemon } from '../../models/pokemon';
 
 @Component({
   selector: 'app-pokemons-list',
-  imports: [],
+  imports: [PokeCardList],
   templateUrl: './pokemons-list.html',
   styleUrl: './pokemons-list.css'
 })
-export class PokemonsList implements OnInit {
+export class PokemonsList implements OnInit, OnChanges {
 
   constructor(private api: ApiPokemon) { }
 
   pData: any;
-  pokemons: Pokemon[] | null = null;
+  pokemons: PUrl[] = [];
+  choosedPokemon: PUrl = {
+    url: "https://pokeapi.co/api/v2/pokemon/1/",
+    name: "bulbasaur",
+    id: 0
+  };
+
 
   ngOnInit(): void {
-    let dtoPokemon: DtoToPokemon = new DtoToPokemon(this.api);
-    this.pokemons = dtoPokemon.dtoToPokemons();
+    this.api.getPokemons().subscribe({
+      next: data => {
+        this.pokemons = data;
+      },
+      error: err => console.log(err)
+    })
+  }
+
+  choosePokemon(pokemon: PUrl, id: number) {
+    this.choosedPokemon = {
+      url: pokemon.url,
+      name: pokemon.name,
+      id: id
+    };
+  }
+
+  previous(id: number) {
+    if ((id) > 0)
+      for (let i = 0; i < this.pokemons.length; i++)
+        if (i == id)
+          this.choosePokemon(this.pokemons[i - 1], id - 1);
+  }
+
+  next(id: number) {
+    if ((id) < this.pokemons.length)
+      for (let i = 0; i < this.pokemons.length; i++)
+        if (i == id)
+          this.choosePokemon(this.pokemons[i + 1], id + 1);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
 
   }
 }

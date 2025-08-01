@@ -6,7 +6,10 @@ import { PTypes } from '../../models/pokemonType';
 })
 export class TypeColorPipe implements PipeTransform {
 
-  transform(value: PTypes): string {
+  transform(value: PTypes | undefined): string {
+    if (value == undefined)
+      return "hidden";
+
     switch (value) {
       case PTypes.FIRE: return 'bg-red-500';
       case PTypes.WATER: return 'bg-blue-500';
